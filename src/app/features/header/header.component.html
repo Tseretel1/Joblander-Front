@@ -1,0 +1,20 @@
+<div class="center-header">
+    <div class="header"> 
+        <div class="header-align">
+            
+            <div class="nav-align">
+                <p class="nav-link" routerLink="home" routerLinkActive="active-link">{{"JOBS"|translate}}</p>
+                <p class="nav-link"  routerLinkActive="active-link">{{"PUBLISH"|translate}}</p>
+                <p class="nav-link" routerLinkActive="active-link">{{"PROFILE"|translate}}</p>
+            </div>
+            <div class="header-title">
+                <img src="assets/icons/suitcase.png" alt="" class="suitcase">
+                <p class="title">Job Finder</p>
+                <div class="language">
+                    <button (click)="en()" *ngIf="!lang"  class="lang-button" value="en">En</button>
+                    <button (click)="geo()" *ngIf="lang" class="lang-button" value="geo">ქარ</button>
+                </div> 
+            </div>
+        </div>
+    </div>
+</div>
