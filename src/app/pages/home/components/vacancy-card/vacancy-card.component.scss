@@ -1,0 +1,105 @@
+$backgroundColor: rgb(20 30 55 / var(--tw-bg-opacity, 1));
+$primaryColor : rgb(50 170 160 / var(--tw-text-opacity, 1));
+$secondaryColor : rgb(190 255 130 / var(--tw-text-opacity, 1));
+:host {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: $backgroundColor;
+  width: 100%;
+  align-items: center;
+  transition: 0.3s all ease-in-out;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow:  0px 0px 5px rgba(0, 0, 0, 0.349);
+  .card-title{
+    display: flex;
+    padding: 16px;  
+    width: 90%;
+    .title {
+        color: whitesmoke;
+        font-size: 20px;
+        font-family: bold;
+        transition: 0.3s all ease-in-out;
+        margin: 0;
+    }
+  }
+  .photo-container{
+    width: 90%;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 250px;
+    .vacancy-photo{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: 0.3s all ease-in-out;
+    }
+    &:hover .vacancy-photo{
+        scale: 1.1;
+    }
+  }
+    .description-align{
+        width: 90%;
+        max-height: 100px;
+        overflow: hidden;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        .desc{
+            color: $primaryColor ;
+        }
+        .description{
+            color: white;
+        }
+    }
+}
+.card:hover{
+    background-color: rgb(43 57 91);
+    box-shadow:  0px 0px 10px black;
+}
+.card:hover .title{
+    text-shadow: 0px 0px 3px white;
+}
+.publisher{
+    display: flex;
+    align-items: center;
+    width: 90%;
+    padding-top: 10px;
+    gap: 8px;
+    justify-content: flex-end;
+    .publisher-name{
+        color: $primaryColor;
+        margin: 0;
+    }
+    .publisher-img-container{
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        border: 1px solid white;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .pblisher-img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+
+@media screen and (max-width: 800px) {
+    .card{
+        .card-title{
+           .title{
+                font-size: 20px
+           }
+        }
+    }
+}

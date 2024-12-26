@@ -3,6 +3,21 @@ html,body{
     height: 100%;
     padding: 0;
     margin: 0;
+    font-family: "Regular", sans-serif;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@font-face {
+    font-family: "Regular";
+    src: url("/assets/fonts/BOG-Regular.ttf");
+}
+@font-face {
+    font-family: "Semibold";
+    src: url("/assets/fonts/BOG-SemiBold.ttf");
+}
+@font-face {
+    src: url("/assets/fonts/BOG-Headline-Medium.ttf");
+    font-family: "Medium";
+}
+@font-face {
+    src: url("/assets/fonts/BOG-Headline-Bold.ttf");
+    font-family: "Bold";
+}

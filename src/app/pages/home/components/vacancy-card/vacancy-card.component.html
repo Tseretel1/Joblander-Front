@@ -1,0 +1,20 @@
+
+<div class="card"> 
+    <div class="publisher">
+        <p class="publisher-name">{{vacany.publisherName}}</p>
+        <div class="publisher-img-container">
+            <img [src]="vacany.publisherPhoto" class="publisher-img" alt="">
+        </div>
+    </div>
+    <div class="card-title">
+        <p class="title">{{vacany.title}}</p>
+    </div>
+    <div class="photo-container">
+        <img [src]="vacany.vacancyPhoto" alt="" class="vacancy-photo">
+    </div>
+    <div class="description-align">
+        <b class="desc">{{"DESCRIPTION" |translate}}:</b>
+        <p class="description">{{vacany.jobDescription}}</p>
+    </div>
+
+</div>
