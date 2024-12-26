@@ -1,0 +1,31 @@
+<div class="header">
+    <div class="header-align">
+        <button class="navbar-button" (click)="showNavbar()"></button>
+        <div class="header-title">
+            <img src="assets/icons/suitcase.png" alt="" class="suitcase">
+            <p class="title">Job Finder</p>
+        </div>
+    </div>
+</div>
+
+<div class="navbar-align" *ngIf="navbarvisible">
+    <div class="navbar-back" @fadeOut>
+        <div class="navbar">
+            
+            <div class="x-button-align" (click)="hideNavbar()">
+                <button class="x-button"></button>
+            </div>
+            <div class="language">
+                <button (click)="en()" *ngIf="!lang"  class="lang-button" value="en">En</button>
+                <button (click)="geo()" *ngIf="lang" class="lang-button" value="geo">ქარ</button>
+            </div> 
+            <div class="nav-align">
+         
+                <p class="nav-link" routerLink="home" routerLinkActive="active-link">{{"JOBS"|translate}}</p>
+                <p class="nav-link"  routerLinkActive="active-link">{{"PUBLISH"|translate}}</p>
+                <p class="nav-link" routerLinkActive="active-link">{{"PROFILE"|translate}}</p>
+            </div>
+        </div>
+        <div (click)="hideNavbar()"></div>
+    </div>
+</div>

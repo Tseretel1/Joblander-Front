@@ -6,11 +6,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { HttpClient } from '@angular/common/http';
 import { HttpLoaderFactory } from './http-loader.factory';
-
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 bootstrapApplication(AppComponent, {
   providers: [
     importProvidersFrom(HttpClientModule),
-    
+    [importProvidersFrom(BrowserAnimationsModule)] ,
     importProvidersFrom(
       TranslateModule.forRoot({
         loader: {
@@ -20,6 +21,6 @@ bootstrapApplication(AppComponent, {
         }
       })
     ),
-    ...appConfig.providers,
+    ...appConfig.providers, provideAnimationsAsync(),
   ]
-}).catch((err) => console.error(err));
+})

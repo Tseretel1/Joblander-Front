@@ -3,3 +3,19 @@
     height: 100%;
     background-color: rgb(14, 23, 43);
 }
+
+
+.mobile-header{
+    display: none;    
+}
+.header{
+    display: flex;
+}
+@media screen and (max-width:800px){
+    .mobile-header{
+        display: flex;
+    }
+    .header{
+        display: none;
+    }
+}
