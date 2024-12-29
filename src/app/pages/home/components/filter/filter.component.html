@@ -1,0 +1,63 @@
+<div class="component-align">
+    <div class="open-filter" (click)="showfilters()">
+        <p class="filter-title">{{"FILTER"|translate}} </p> 
+        <mat-icon class="arrow" [ngClass]="{'arrow-anim':filtersvisible}">keyboard_arrow_right</mat-icon>
+    </div>
+    <div class="comp-body" [ngClass]="{'comp-visible':filtersvisible}">
+        <div class="select-align">
+            <p class="select-title">{{"CATEGORIES" | translate}}</p>
+            <mat-form-field class="formparenmt">
+              <mat-select [formControl]="selectedOption">
+                <mat-option value="1" >{{"ALLCATEGORIES" | translate}}</mat-option>
+                <mat-option value="1" >{{"IT" | translate}}</mat-option>
+                <mat-option value="1" >{{"ADMINANDMANAGEMENT" | translate}}</mat-option>
+                <mat-option value="1" >{{"FINANCES" | translate}}</mat-option>
+                <mat-option value="1" >{{"SALES" | translate}}</mat-option>
+                <mat-option value="1" >{{"TRANSPORTANDDIST" | translate}}</mat-option>
+                <mat-option value="1" >{{"CLEANING" | translate}}</mat-option>
+                <mat-option value="1" >{{"EDUCATION" | translate}}</mat-option>
+                <mat-option value="1" >{{"LAW" | translate}}</mat-option>
+                <mat-option value="1" >{{"MEDICINE" | translate}}</mat-option>
+                <mat-option value="2">{{"GASTRONOMYCUISINE" | translate}}</mat-option>
+                <mat-option value="3">{{"OTHER" | translate}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div class="select-align">
+            <p class="select-title">{{"UPLOADDATE" | translate}}</p>
+            <mat-form-field class="formparenmt">
+              <mat-select [formControl]="selectedOption">
+                <mat-option value="1" >{{"TODAY" | translate}}</mat-option>
+                <mat-option value="2">{{"LASTTHREEDAYS" | translate}}</mat-option>
+                <mat-option value="3">{{"LASTWEEK" | translate}}</mat-option>
+                <mat-option value="4">{{"LASTTWOWEEK" | translate}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+        </div>
+    
+        <div class="select-align">
+            <p class="select-title">{{"LOCATION" | translate}}</p>
+            <mat-form-field class="formparenmt">
+            <mat-select [formControl]="selectedOption">
+                <mat-option value="1" >{{"TBILISI" | translate}}</mat-option>
+                <mat-option value="2">{{"BATUMI" | translate}}</mat-option>
+                <mat-option value="3">{{"KUTAISI" | translate}}</mat-option>
+                <mat-option value="4">{{"KAKHETI" | translate}}</mat-option>
+                <mat-option value="4">{{"ADJARA" | translate}}</mat-option>
+                <mat-option value="4">{{"ABKHAZETI" | translate}}</mat-option>
+                <mat-option value="4">{{"GURIA" | translate}}</mat-option>
+                <mat-option value="4">{{"IMERETI" | translate}}</mat-option>
+                <mat-option value="4">{{"KVEMOKARTLI" | translate}}</mat-option>
+                <mat-option value="4">{{"MTSKHETAMTIANETI" | translate}}</mat-option>
+                <mat-option value="4">{{"LECHKHUMI" | translate}}</mat-option>
+                <mat-option value="4">{{"SVANETI" | translate}}</mat-option>
+                <mat-option value="4">{{"SAMEGRELO" | translate}}</mat-option>
+                <mat-option value="4">{{"SAMTSKHEJAVAKHETI" | translate}}</mat-option>
+                <mat-option value="4">{{"SHIDAKARTLI" | translate}}</mat-option>
+            </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+</div>
+  

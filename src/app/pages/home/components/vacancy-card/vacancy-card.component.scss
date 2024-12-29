@@ -9,90 +9,101 @@ $secondaryColor : rgb(190 255 130 / var(--tw-text-opacity, 1));
 .card {
   display: flex;
   flex-direction: column;
-  background-color: $backgroundColor;
+  background-color: rgb(34, 42, 61);
   width: 100%;
   align-items: center;
   transition: 0.3s all ease-in-out;
   border-radius: 10px;
+  animation: 0.5s photoAnim;
   cursor: pointer;
-  box-shadow:  0px 0px 5px rgba(0, 0, 0, 0.349);
+  position: relative;
+  @keyframes photoAnim {
+        0%{
+            scale: 0.9;
+            opacity: 0;
+        }
+        50%{
+            opacity: 1;
+        }
+        100%{
+            scale: 1;
+        }
+   }
   .card-title{
     display: flex;
     padding: 16px;  
-    width: 90%;
+    width: 88%;
     .title {
         color: whitesmoke;
         font-size: 20px;
         font-family: bold;
         transition: 0.3s all ease-in-out;
         margin: 0;
+        padding: 2px;
+        border-radius: 5px;
     }
   }
-  .photo-container{
-    width: 90%;
-    border-radius: 10px;
-    overflow: hidden;
-    height: 250px;
-    .vacancy-photo{
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: 0.3s all ease-in-out;
+  .job-info{
+    width: 88%;
+    .price{
+        color: white;
+        opacity: 0.5;
     }
-    &:hover .vacancy-photo{
-        scale: 1.1;
-    }
-  }
     .description-align{
-        width: 90%;
+        width: 100%;
         max-height: 100px;
         overflow: hidden;
         display: flex;
         gap: 10px;
         align-items: center;
         .desc{
-            color: $primaryColor ;
+            text-wrap: nowrap  ;
+            color: $primaryColor;
         }
         .description{
-            color: white;
+            color: rgba(255, 255, 255, 0.616);
         }
-    }
-}
-.card:hover{
-    background-color: rgb(43 57 91);
-    box-shadow:  0px 0px 10px black;
-}
-.card:hover .title{
-    text-shadow: 0px 0px 3px white;
-}
-.publisher{
+     }
+  }
+  
+  .publisher{
     display: flex;
-    align-items: center;
-    width: 90%;
     padding-top: 10px;
     gap: 8px;
-    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 10px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
     .publisher-name{
         color: $primaryColor;
         margin: 0;
+        text-align: center;
     }
     .publisher-img-container{
         width: 35px;
         height: 35px;
         border-radius: 50%;
         border: 1px solid white;
-        overflow: hidden;
         display: flex;
         align-items: center;
         justify-content: center;
-        .pblisher-img{
+        overflow: hidden;
+        .publisher-img{
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
     }
 }
-
+}
+.card:hover{
+    background-color: rgb(52, 65, 97);
+    scale: 1.01;
+}
+.card::-webkit-scrollbar{
+    display: none;
+}
 
 @media screen and (max-width: 800px) {
     .card{

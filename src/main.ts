@@ -21,6 +21,6 @@ bootstrapApplication(AppComponent, {
         }
       })
     ),
-    ...appConfig.providers, provideAnimationsAsync(),
+    ...appConfig.providers, provideAnimationsAsync(), provideAnimationsAsync(),
   ]
 })

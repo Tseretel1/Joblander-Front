@@ -1,9 +1,11 @@
+$backgroundColor :  rgb(12, 19, 33);
 html,body{
     width: 100%;
     height: 100%;
     padding: 0;
     margin: 0;
     font-family: "Regular", sans-serif;
+    background-color: $backgroundColor;
 }
 @font-face {
     font-family: "Regular";
@@ -21,3 +23,5 @@ html,body{
     src: url("/assets/fonts/BOG-Headline-Bold.ttf");
     font-family: "Bold";
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

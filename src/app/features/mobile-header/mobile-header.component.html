@@ -1,9 +1,11 @@
 <div class="header">
     <div class="header-align">
-        <div class="headernavbar-opener-align">
-            <button class="navbar-button" (click)="showNavbar()"></button>
-        </div>
-        <div class="header-title">
+            <button class="navbar-button" (click)="showNavbar()">
+                <img class="white-lines" src="assets/icons/whitelines.png" alt="">
+                <img class="white-lines" src="assets/icons/whitelines.png" alt="">
+                <img class="white-lines" src="assets/icons/whitelines.png" alt="">
+            </button>
+        <div class="header-title" routerLink="/jobs">
             <img src="assets/icons/suitcase.png" alt="" class="suitcase">
             <p class="title">Job Lander</p>
         </div>
@@ -11,15 +13,15 @@
 </div>
 
 <div class="navbar-align" *ngIf="navbarvisible">
-    <div class="navbar-back" @fadeOut>
+    <div class="navbar-back" >
         <div class="navbar">
             <div class="x-button-align" (click)="hideNavbar()">
                 <button class="x-button"></button>
             </div>
             <div class="nav-align">
-                <p class="nav-link" routerLink="home" routerLinkActive="active-link">{{"JOBS"|translate}}</p>
-                <p class="nav-link"  routerLinkActive="active-link">{{"PUBLISH"|translate}}</p>
-                <p class="nav-link" routerLinkActive="active-link">{{"PROFILE"|translate}}</p>
+                <p class="nav-link" (click)="hideNavbar()" routerLink="/jobs" routerLinkActive="active-link">{{"JOBS"|translate}}</p>
+                <p class="nav-link" (click)="hideNavbar()" routerLinkActive="active-link" routerLink="/publish" >{{"PUBLISH"|translate}}</p>
+                <p class="nav-link" (click)="hideNavbar()" routerLinkActive="active-link">{{"PROFILE"|translate}}</p>
             </div>
             <div class="language">
                 <button (click)="en()" *ngIf="!lang"  class="lang-button" value="en">En</button>
@@ -28,4 +30,4 @@
         </div>
         <div (click)="hideNavbar()"></div>
     </div>
-</div>
+</div>  

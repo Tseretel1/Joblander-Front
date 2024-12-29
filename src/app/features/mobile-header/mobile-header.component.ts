@@ -1,12 +1,12 @@
 import { animate, style, transition, trigger } from '@angular/animations';
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-mobile-header',
-  imports: [CommonModule,TranslateModule,],
+  imports: [CommonModule,TranslateModule,RouterLink,RouterLinkActive],
   animations: [
     trigger('fadeOut', [
       transition(':leave', [

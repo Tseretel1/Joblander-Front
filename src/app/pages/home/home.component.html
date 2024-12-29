@@ -1,14 +1,16 @@
-<div class="header-align">
-    <app-mobile-header class="mobile-header"></app-mobile-header>
-    <app-header class="header"></app-header>
-</div>
-<div class="home"   (mousemove)="onMouseMove($event)">
-    <div class="flashlight" [ngStyle]="flashlightStyle"></div>
 
-    <div class="vacany-align">
-        @for (vc of vacanys; track vc.title;) {
-            <app-vacancy-card [vacany]="vc" class="vacany"/>
-        }
+<div class="home">
+    <div class="home-align">
+        <div class="filter-align">       
+            <app-filter class="filter-component"></app-filter>
+        </div>
+        <div class="vacany-align">
+            <div *ngFor="let vc of vacanys; trackBy: trackByVacany">
+                <div [routerLink]="['/apply']" [queryParams]="{vacany: getVacanyData(vc)}">
+                    <app-vacancy-card [vacany]="vc" class="vacany"></app-vacancy-card>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 

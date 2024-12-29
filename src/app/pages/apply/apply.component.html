@@ -1,0 +1,33 @@
+
+<div class="component-align">
+    <div class="job-half">
+        <header class="publisher">
+            <div class="publisher-img-container">
+                <img [src]="vacany.publisherPhoto" class="publisher-img" alt="">
+            </div>
+            <p class="publisher-name">{{vacany.publisherName}}</p>
+        </header>
+        <div class="announce-align">
+            <p class="announce">{{"COMPANY"|translate}}</p>
+            <p class="publisher-name">"{{vacany.publisherName}}"</p>
+            <p class="announce">{{"ANNOUNCES"|translate}}</p>
+            <p class="announce">{{"POSITION"|translate}}</p>
+            <p class="job-title">"{{vacany.title}}"</p>
+        </div>   
+        <div class="job-body">
+            <div class="description-align">
+                <div class="description">
+                    <p class="desc-title"> {{"DESCRIPTION" |translate}} </p>
+                    <p class="desc-text">{{vacany.description}} </p>
+                </div>
+            </div> 
+            <div class="description-align">
+                <div class="description">
+                    <p class="desc-title"> {{"JOBDESCRIPTION" |translate}} </p>
+                    <p class="desc-text">{{vacany.jobDescription}} </p>
+                </div>
+            </div> 
+        </div>
+    </div>
+    <div class=""></div>
+</div>

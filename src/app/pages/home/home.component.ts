@@ -1,12 +1,19 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
-import { HeaderComponent } from '../../features/header/header.component';
-import { MobileHeaderComponent } from "../../features/mobile-header/mobile-header.component";
+import { Component, mergeApplicationConfig, OnInit } from '@angular/core';
 import { VacancyCardComponent } from "./components/vacancy-card/vacancy-card.component";
 import { VacanyModel } from './models/vacany-model';
+import { RouterLink } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
+import { FilterComponent } from "./components/filter/filter.component";
 @Component({
   selector: 'app-home',
-  imports: [CommonModule, HeaderComponent, MobileHeaderComponent, VacancyCardComponent],
+  imports: [
+    CommonModule,
+    VacancyCardComponent,
+    RouterLink,
+    TranslateModule,
+    FilterComponent
+],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
@@ -17,6 +24,14 @@ export class HomeComponent implements OnInit {
     this.createVacancys();
   }
 
+  getVacanyData(vc: VacanyModel) {
+    return JSON.stringify(vc);  
+  }
+
+  trackByVacany(index: number, item: VacanyModel) {
+    return item.title; 
+  }
+  
   createVacancys() {
     const vacancyTitle = [
       'ოფისის მენეჯერი',
@@ -63,6 +78,7 @@ export class HomeComponent implements OnInit {
       const description = descriptions[i % descriptions.length];
       const jobDescription = jobDescriptions[i % jobDescriptions.length];
       const publisherName = publisherNames[i % publisherNames.length];
+      const price = 1500;
 
       const vacancy = new VacanyModel(
         title,
@@ -70,19 +86,22 @@ export class HomeComponent implements OnInit {
         description,
         jobDescription,
         publisherName,
-        publisherPhoto
+        publisherPhoto,
+        price
       );
 
       this.vacanys.push(vacancy);
     }
   }
 
-  flashlightStyle: any = {};
 
-  onMouseMove(event: MouseEvent): void {
-    this.flashlightStyle = {
-      left: `${event.clientX - 50}px`,  // Adjust 50px for centering the light
-      top: `${event.clientY - 50}px`,   // Adjust 50px for centering the light
-    };
+  optionVisible :boolean = false;
+  openOption(){
+    if(!this.optionVisible){
+      this.optionVisible = true;
+    }
+    else{
+      this.optionVisible = false;
+    }
   }
 }

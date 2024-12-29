@@ -5,6 +5,7 @@ export class VacanyModel {
     publisherPhoto :string;
     vacancyPhoto: string;
     jobDescription : string;
+    price : number;
 
     constructor(
          title: string,
@@ -13,6 +14,7 @@ export class VacanyModel {
          jobDescription : string,
          publisherName: string,
          publisherPhoto: string,
+        price : number,
         ) {
       this.title = title;
       this.description = description;
@@ -20,6 +22,7 @@ export class VacanyModel {
       this.publisherName = publisherName;
       this.publisherPhoto = publisherPhoto;
       this.vacancyPhoto = vacancyPhoto;
+      this.price = price
     }
   }
   export const vacanyList: VacanyModel[] = [];
