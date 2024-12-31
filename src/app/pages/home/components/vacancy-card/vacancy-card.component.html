@@ -2,6 +2,11 @@
 <div class="card">
     <div class="card-title">
         <p class="title">{{vacany.title}}</p>
+        <div class="publisher">
+            <div class="publisher-img-container">
+                <img [src]="vacany.publisherPhoto" class="publisher-img" alt="">
+            </div>
+        </div>
     </div>
     
     <div class="job-info">
@@ -11,9 +16,5 @@
             <p class="description">{{vacany.jobDescription}}</p>
         </div>
     </div>
-    <div class="publisher">
-        <div class="publisher-img-container">
-            <img [src]="vacany.publisherPhoto" class="publisher-img" alt="">
-        </div>
-    </div>
+
 </div>

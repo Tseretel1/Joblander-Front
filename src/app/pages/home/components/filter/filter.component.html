@@ -7,8 +7,8 @@
         <div class="select-align">
             <p class="select-title">{{"CATEGORIES" | translate}}</p>
             <mat-form-field class="formparenmt">
-              <mat-select [formControl]="selectedOption">
-                <mat-option value="1" >{{"ALLCATEGORIES" | translate}}</mat-option>
+              <mat-select [formControl]="selectedOption" class="select">
+                <mat-option value="1" class="matoption">{{"ALLCATEGORIES" | translate}}</mat-option>
                 <mat-option value="1" >{{"IT" | translate}}</mat-option>
                 <mat-option value="1" >{{"ADMINANDMANAGEMENT" | translate}}</mat-option>
                 <mat-option value="1" >{{"FINANCES" | translate}}</mat-option>
@@ -36,7 +36,7 @@
             </mat-form-field>
         </div>
     
-        <div class="select-align">
+        <div class="select-align"> 
             <p class="select-title">{{"LOCATION" | translate}}</p>
             <mat-form-field class="formparenmt">
             <mat-select [formControl]="selectedOption">

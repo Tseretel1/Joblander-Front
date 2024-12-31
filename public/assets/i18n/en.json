@@ -53,6 +53,21 @@
     "LAW" : "Law",
     "MEDICINE" : "Medicine",
     "GASTRONOMYCUISINE" : "Gastronomy & Cuisine",
-    "OTHER" : "Other"
-    
+    "OTHER" : "Other",
+
+
+
+
+
+    "SIGNUPFORAPP" : "Sign up to use every feature of the app!",
+    "HAVEANACCOUNT" : "Already have an account?",
+    "SIGNIN" : "Sign in",
+    "SUBMIT" : "Submit",
+    "REGISTER" : "Register",
+    "NAME" : "Name",
+    "LASTNAME" : "Lastname",
+    "GMAIL" : "Gmail",
+    "PASSWORD" : "Password",
+    "REPEATPASSWORD" : "Repeat Password",
+    "PHOTO" : "Photo"
 }

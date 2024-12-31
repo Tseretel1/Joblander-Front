@@ -40,7 +40,7 @@
     "SHIDAKARTLI" : "შიდა ქართლი",
 
 
-    "CATEGORIES" : "კატეგორიაები",
+    "CATEGORIES" : "კატეგორიები",
     "ALLCATEGORIES" : "ყველა კატეგორია",
     "ADMINANDMANAGEMENT" : "ადმინისტრაცია და მენეჯმენტი",
     "FINANCES" : "ფინანსები",
@@ -55,5 +55,21 @@
     "LAW" : "სამართალი",
     "MEDICINE" : "მედიცინა",
     "GASTRONOMYCUISINE" : "კვება",
-    "OTHER" : "სხვა"
+    "OTHER" : "სხვა",
+
+
+
+
+
+    "SIGNUPFORAPP" : "დარეგისტრირდი რათა გამოიყენო აპლიკაციის ყველა ფუნქცია!",
+    "HAVEANACCOUNT" : "უკვე გაქვთ აქაუნთი?",
+    "SIGNIN" : "შესვლა",
+    "SUBMIT" : "დადასტურება",
+    "REGISTER" : "რეგისტრაცია",
+    "NAME" : "სახელი",
+    "LASTNAME" : "გვარი",
+    "GMAIL" : "მეილი",
+    "PASSWORD" : "პაროლი",
+    "REPEATPASSWORD" : "გაიმეორეთ პაროლი",
+    "PHOTO" : "ფოტო"
 }

@@ -14,19 +14,19 @@ export class HeaderComponent implements OnInit{
   }
   ngOnInit(): void {
     this.translate.use('en').subscribe(() => {
-      this.lang = true;
+      this.lang = false;
     });
   }
 
   lang:boolean = false;
   en(){
     this.translate.use("en")
-    this.lang = true;
+    this.lang = false;
     localStorage.setItem('language', 'en');
   }
   geo(){
     this.translate.use("geo")
-    this.lang = false;
+    this.lang = true;
     localStorage.setItem('language', 'geo');
   }
 }

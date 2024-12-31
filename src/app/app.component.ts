@@ -16,10 +16,19 @@ export class AppComponent implements OnInit {
   constructor(private translate: TranslateService) {}
 
   ngOnInit() {
-    const storedLang = localStorage.getItem('language');
-    const defaultLang = storedLang ? storedLang : 'geo';
+    this.languageDetect();
+  }
 
-    this.translate.setDefaultLang(defaultLang);
-    this.translate.use(defaultLang);
+  languageDetect(){
+    this.translate.setDefaultLang("geo");
+    const storedLang = localStorage.getItem('language');
+    if(storedLang =="en"){
+      console.log(storedLang);
+      this.translate.use("en")
+    }
+    else{
+      console.log(storedLang);
+      this.translate.use("geo")
+    }
   }
 }

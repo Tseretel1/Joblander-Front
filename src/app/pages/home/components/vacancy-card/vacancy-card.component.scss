@@ -31,8 +31,10 @@ $secondaryColor : rgb(190 255 130 / var(--tw-text-opacity, 1));
    }
   .card-title{
     display: flex;
-    padding: 16px;  
-    width: 88%;
+    width: 90%;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 8px;
     .title {
         color: whitesmoke;
         font-size: 20px;
@@ -41,13 +43,41 @@ $secondaryColor : rgb(190 255 130 / var(--tw-text-opacity, 1));
         margin: 0;
         padding: 2px;
         border-radius: 5px;
+        margin: 10px 0px;
     }
+    .publisher{
+        display: flex;
+        padding-top: 10px;
+        gap: 8px;
+        align-items: center;
+        padding-bottom: 10px;
+        .publisher-name{
+            color: $primaryColor;
+            margin: 0;
+            text-align: center;
+        }
+            .publisher-img-container{
+                width: 35px;
+                height: 35px;
+                border-radius: 50%;
+                border: 1px solid white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                overflow: hidden;
+                .publisher-img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
   }
   .job-info{
     width: 88%;
     .price{
-        color: white;
-        opacity: 0.5;
+        color: rgb(174, 171, 171);
+        font-size: 14px;
     }
     .description-align{
         width: 100%;
@@ -65,37 +95,6 @@ $secondaryColor : rgb(190 255 130 / var(--tw-text-opacity, 1));
         }
      }
   }
-  
-  .publisher{
-    display: flex;
-    padding-top: 10px;
-    gap: 8px;
-    align-items: center;
-    padding-bottom: 10px;
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    .publisher-name{
-        color: $primaryColor;
-        margin: 0;
-        text-align: center;
-    }
-    .publisher-img-container{
-        width: 35px;
-        height: 35px;
-        border-radius: 50%;
-        border: 1px solid white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-        .publisher-img{
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-    }
-}
 }
 .card:hover{
     background-color: rgb(52, 65, 97);
@@ -111,6 +110,20 @@ $secondaryColor : rgb(190 255 130 / var(--tw-text-opacity, 1));
            .title{
                 font-size: 20px
            }
+        }
+    }
+}
+@media screen and (max-width: 700px) {
+    .card{
+        .description-align{
+            flex-direction: column;
+            gap: 0px;
+            padding: 5px;
+            align-items: flex-start;
+            justify-content: flex-star;
+            .description{
+                margin: 0;
+            }
         }
     }
 }
