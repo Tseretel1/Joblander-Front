@@ -69,5 +69,12 @@
     "GMAIL" : "Gmail",
     "PASSWORD" : "Password",
     "REPEATPASSWORD" : "Repeat Password",
-    "PHOTO" : "Photo"
+    "PHOTO" : "Photo",
+
+
+    "WHATISJOBLANDER" : "What is job lander?",
+    "JOBLANDERIS": "Joblander is a platform designed for recruiters and job seekers which connects them based on shared interests and skill sets.",
+    "SEARCHINGFORJOB" : "Searching for a job at IT Field?",
+    "REGISTERONOUR" : "Register on our platform where you can fill your profile with detailed information about your skills, which helps Recruiters find You 👈!"
 }
+

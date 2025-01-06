@@ -5,6 +5,7 @@ import { VacanyModel } from './models/vacany-model';
 import { RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { FilterComponent } from "./components/filter/filter.component";
+import { AboutComponent } from "./components/about/about.component";
 @Component({
   selector: 'app-home',
   imports: [
@@ -12,7 +13,8 @@ import { FilterComponent } from "./components/filter/filter.component";
     VacancyCardComponent,
     RouterLink,
     TranslateModule,
-    FilterComponent
+    FilterComponent,
+    AboutComponent
 ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
