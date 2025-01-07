@@ -1,4 +1,7 @@
 {
+    "JOBLANDER" : "Job Lander",
+
+
     "JOBS": "Jobs",
     "PUBLISH": "Publish",
     "PROFILE": "Profile",
@@ -72,9 +75,12 @@
     "PHOTO" : "Photo",
 
 
-    "WHATISJOBLANDER" : "What is job lander?",
-    "JOBLANDERIS": "Joblander is a platform designed for recruiters and job seekers which connects them based on shared interests and skill sets.",
+    "WHATISJOBLANDER" : "What is a job lander?",
+    "JOBLANDERIS": "Joblander is a platform for developers and recruiters which connects them based on shared interests and skill sets.",
     "SEARCHINGFORJOB" : "Searching for a job at IT Field?",
-    "REGISTERONOUR" : "Register on our platform where you can fill your profile with detailed information about your skills, which helps Recruiters find You 👈!"
+    "REGISTERONOUR" : "Register on our platform where you can fill your profile with detailed information about your skills, which helps Recruiters find You 👈!",
+    "WHATISOURPURPOSE" : "What is our purpose?",
+    "OURPURPOSE" : "Our purpose is to make it easier for developers to find jobs that suit them best, and for recruiters to find the ideal candidates for their vacancies!",
+    "FINDYOURJOB" : "Find your desired job at our platform!"
 }
 

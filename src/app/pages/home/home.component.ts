@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { Component, mergeApplicationConfig, OnInit } from '@angular/core';
+import { Component, mergeApplicationConfig, OnDestroy, OnInit } from '@angular/core';
 import { VacancyCardComponent } from "./components/vacancy-card/vacancy-card.component";
 import { VacanyModel } from './models/vacany-model';
 import { RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { FilterComponent } from "./components/filter/filter.component";
 import { AboutComponent } from "./components/about/about.component";
+import Aos from 'aos';
 @Component({
   selector: 'app-home',
   imports: [
@@ -19,13 +20,21 @@ import { AboutComponent } from "./components/about/about.component";
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit ,OnDestroy{
   vacanys: VacanyModel[] = [];
 
   ngOnInit(): void {
     this.createVacancys();
-  }
 
+    Aos.init({
+      duration: 1000,      
+      easing: 'ease-in-out',
+      once: true           
+    });
+  }
+  ngOnDestroy(): void {
+    Aos.refreshHard(); 
+  }
   getVacanyData(vc: VacanyModel) {
     return JSON.stringify(vc);  
   }
@@ -35,6 +44,7 @@ export class HomeComponent implements OnInit {
   }
   
   createVacancys() {
+    Aos.refresh();
     const vacancyTitle = [
       'ოფისის მენეჯერი',
       'გაყიდვების კონსულტანტი',

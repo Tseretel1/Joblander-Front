@@ -1,20 +1,18 @@
 
 <div class="card">
+    <div class="publisher">
+        <div class="publisher-img-container">
+            <img [src]="vacany.publisherPhoto" class="publisher-img" alt="">
+        </div>
+    </div>
     <div class="card-title">
         <p class="title">{{vacany.title}}</p>
-        <div class="publisher">
-            <div class="publisher-img-container">
-                <img [src]="vacany.publisherPhoto" class="publisher-img" alt="">
-            </div>
-        </div>
     </div>
     
     <div class="job-info">
-        <div class="price">- - {{vacany.price}} $</div>
         <div class="description-align">
             <b class="desc">{{"JOBDESCRIPTION" |translate}}</b>
             <p class="description">{{vacany.jobDescription}}</p>
         </div>
     </div>
-
 </div>

@@ -6,14 +6,13 @@
             <app-filter class="filter-component"></app-filter>
         </div>
         <div class="vacany-align">
-            <div *ngFor="let vc of vacanys; trackBy: trackByVacany">
-                <div [routerLink]="['/apply']" [queryParams]="{vacany: getVacanyData(vc)}">
+            <div *ngFor="let vc of vacanys; trackBy: trackByVacany"  data-aos="fade-up" data-aos-offset="200">
+                <div [routerLink]="['/apply']" [queryParams]="{vacany: getVacanyData(vc)}" class="vacancy-height">
                     <app-vacancy-card [vacany]="vc" class="vacany"></app-vacancy-card>
                 </div>
             </div>
         </div>
     </div>
-    <app-about class="about-component"></app-about>
 </div>
 
 
