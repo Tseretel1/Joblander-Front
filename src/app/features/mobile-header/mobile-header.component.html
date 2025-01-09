@@ -19,6 +19,7 @@
                 <button class="x-button"></button>
             </div>
             <div class="nav-align">
+                <p class="nav-link" (click)="hideNavbar()" routerLinkActive="active-link"  routerLink="/home">{{"HOME"|translate}}</p>
                 <p class="nav-link" (click)="hideNavbar()" routerLink="/jobs" routerLinkActive="active-link">{{"JOBS"|translate}}</p>
                 <p class="nav-link" (click)="hideNavbar()" routerLinkActive="active-link" routerLink="/publish" >{{"PUBLISH"|translate}}</p>
                 <p class="nav-link" (click)="hideNavbar()" routerLinkActive="active-link"  routerLink="/auth">{{"PROFILE"|translate}}</p>

@@ -9,7 +9,6 @@ $secondaryColor : rgb(190 255 130 / var(--tw-text-opacity, 1));
 .card {
   display: flex;
   flex-direction: column;
-  background-color: rgb(34, 42, 61);
   width: 100%;
   align-items: center;
   transition: 0.3s all ease-in-out;
@@ -116,10 +115,6 @@ $secondaryColor : rgb(190 255 130 / var(--tw-text-opacity, 1));
         }
      }
   }
-}
-.card:hover{
-    background-color: rgb(52, 65, 97);
-    scale: 1.01;
 }
 .card::-webkit-scrollbar{
     display: none;

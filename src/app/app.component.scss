@@ -1,4 +1,8 @@
 
+*{
+    margin: 0;
+    padding: 0;
+}
 .header-align{
     z-index: 2;
     .mobile-header{
@@ -23,10 +27,9 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    z-index: 0;
     .content{
-        z-index: 0;
-        max-width: 1800px;
-        width: 90%;
+        width: 100%;
     }
 }
 

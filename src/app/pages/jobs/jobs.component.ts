@@ -1,38 +1,40 @@
+import { Component } from '@angular/core';
+import { FilterComponent } from '../home/components/filter/filter.component';
+import { AboutComponent } from '../home/components/about/about.component';
+import { VacanyModel } from '../home/models/vacany-model';
+import Aos from 'aos';
 import { CommonModule } from '@angular/common';
-import { Component, mergeApplicationConfig, OnDestroy, OnInit } from '@angular/core';
-import { VacancyCardComponent } from "./components/vacancy-card/vacancy-card.component";
-import { VacanyModel } from './models/vacany-model';
+import { VacancyCardComponent } from '../home/components/vacancy-card/vacancy-card.component';
 import { RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
-import { FilterComponent } from "./components/filter/filter.component";
-import { AboutComponent } from "./components/about/about.component";
-import * as  AOS from 'aos';
+
 @Component({
-  selector: 'app-home',
-  imports: [
+  selector: 'app-jobs',
+  imports: [  
     CommonModule,
     VacancyCardComponent,
     RouterLink,
     TranslateModule,
-    AboutComponent,
-],
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+    FilterComponent,
+  ],
+  templateUrl: './jobs.component.html',
+  styleUrl: './jobs.component.scss'
 })
-export class HomeComponent implements OnInit ,OnDestroy{
+export class JobsComponent {
+
   vacanys: VacanyModel[] = [];
 
   ngOnInit(): void {
     this.createVacancys();
 
-    AOS.init({
-      duration: 1000,
+    Aos.init({
+      duration: 1000,      
       easing: 'ease-in-out',
-      once: true 
+      once: true           
     });
   }
   ngOnDestroy(): void {
-    AOS.refreshHard(); 
+    Aos.refreshHard(); 
   }
   getVacanyData(vc: VacanyModel) {
     return JSON.stringify(vc);  
@@ -43,7 +45,7 @@ export class HomeComponent implements OnInit ,OnDestroy{
   }
   
   createVacancys() {
-    AOS.refresh();
+    Aos.refresh();
     const vacancyTitle = [
       'ოფისის მენეჯერი',
       'გაყიდვების კონსულტანტი',
@@ -82,7 +84,7 @@ export class HomeComponent implements OnInit ,OnDestroy{
       'Lead teams in delivering innovative and scalable solutions.',
     ];
 
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < 25; i++) {
       const title = vacancyTitle[i % vacancyTitle.length];
       const vacancyPhoto = `https://res.cloudinary.com/ds1q7oiea/image/upload/v1729175304/odvhx1dy8ievkzxhkdoo.webp`;
       const publisherPhoto = `https://randomuser.me/api/portraits/men/${Math.floor(Math.random() * 100)}.jpg`; 
