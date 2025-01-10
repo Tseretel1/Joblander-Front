@@ -16,11 +16,11 @@ export class ApplyComponent implements OnInit{
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     this.route.queryParams.subscribe(params => {
       if (params['vacany']) {
         this.vacany = JSON.parse(params['vacany']);
       }
     });
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 }

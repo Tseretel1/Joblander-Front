@@ -29,12 +29,12 @@ export class MobileHeaderComponent  implements OnInit{
   en(){
     this.translate.use("en")
     this.lang = true;
-    localStorage.setItem('language', 'en');
+    localStorage.setItem('lang', 'en');
   }
   geo(){
     this.translate.use("geo")
     this.lang = false;
-    localStorage.setItem('language', 'geo');
+    localStorage.setItem('lang', 'geo');
   }
 
   navbarvisible :boolean = false; 

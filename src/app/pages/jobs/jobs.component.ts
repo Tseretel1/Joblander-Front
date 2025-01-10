@@ -1,12 +1,12 @@
-import { Component } from '@angular/core';
-import { FilterComponent } from '../home/components/filter/filter.component';
-import { AboutComponent } from '../home/components/about/about.component';
+import { AfterViewChecked, Component, OnInit } from '@angular/core';
 import { VacanyModel } from '../home/models/vacany-model';
-import Aos from 'aos';
+import * as  AOS from 'aos';
+
 import { CommonModule } from '@angular/common';
 import { VacancyCardComponent } from '../home/components/vacancy-card/vacancy-card.component';
 import { RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
+import { FilterComponent } from '../jobs/filter/filter.component';
 
 @Component({
   selector: 'app-jobs',
@@ -20,21 +20,25 @@ import { TranslateModule } from '@ngx-translate/core';
   templateUrl: './jobs.component.html',
   styleUrl: './jobs.component.scss'
 })
-export class JobsComponent {
+export class JobsComponent implements OnInit,AfterViewChecked{
 
   vacanys: VacanyModel[] = [];
-
+  ngAfterViewChecked() {
+    AOS.refresh();
+  }
   ngOnInit(): void {
-    this.createVacancys();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setTimeout(() => {
+      this.createVacancys();
+    }, 100);
 
-    Aos.init({
-      duration: 1000,      
+    AOS.init({
+      duration: 500,      
       easing: 'ease-in-out',
-      once: true           
     });
   }
   ngOnDestroy(): void {
-    Aos.refreshHard(); 
+    AOS.refreshHard(); 
   }
   getVacanyData(vc: VacanyModel) {
     return JSON.stringify(vc);  
@@ -45,7 +49,7 @@ export class JobsComponent {
   }
   
   createVacancys() {
-    Aos.refresh();
+    AOS.refresh();
     const vacancyTitle = [
       'ოფისის მენეჯერი',
       'გაყიდვების კონსულტანტი',

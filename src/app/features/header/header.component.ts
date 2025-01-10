@@ -22,11 +22,11 @@ export class HeaderComponent implements OnInit{
   en(){
     this.translate.use("en")
     this.lang = false;
-    localStorage.setItem('language', 'en');
+    localStorage.setItem('lang', 'en');
   }
   geo(){
     this.translate.use("geo")
     this.lang = true;
-    localStorage.setItem('language', 'geo');
+    localStorage.setItem('lang', 'geo');
   }
 }

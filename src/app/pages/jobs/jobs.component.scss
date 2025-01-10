@@ -21,9 +21,12 @@ $backgroundColor :  rgb(14, 23, 43);
             width: 80%;
             right: 0;
             display: grid;
-            grid-template-columns: repeat(3,1fr);
+            grid-template-columns: repeat(1,1fr);
             gap: 20px;
             height: 100%;
+            .index{
+                color: red;
+            }
             .vacancy-height{
                 height: 100%;
                 .vacancy{
@@ -72,16 +75,6 @@ $backgroundColor :  rgb(14, 23, 43);
             100% {
               background-position: 0% 50%;
             }
-          }
-    }
- 
-}
-@media screen and (max-width:1500px){
-    .home{
-        .home-align{
-            .vacany-align{
-                grid-template-columns: repeat(2,1fr);
-            }
         }
     }
 }
@@ -95,7 +88,7 @@ $backgroundColor :  rgb(14, 23, 43);
             gap: 30px;
             .vacany-align{
                 width: 100%;
-                grid-template-columns: repeat(3,1fr);
+                grid-template-columns: repeat(1,1fr);
             }
             .filter-align{
                 width: 100%;
@@ -107,24 +100,7 @@ $backgroundColor :  rgb(14, 23, 43);
 }
 
 
-@media screen and (max-width:1000px){
-    .home{
-        .home-align{
-            .vacany-align{
-                grid-template-columns: repeat(2,1fr);
-            }
-        }
-    }
-}
-@media screen and (max-width:700px){
-    .home{
-        .home-align{
-            .vacany-align{
-                grid-template-columns: repeat(1,1fr);
-            }
-        }
-    }
-}
+
 
     
   

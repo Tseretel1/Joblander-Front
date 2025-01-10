@@ -77,11 +77,17 @@
 
 
     "WHATISJOBLANDER" : "What is a job lander?",
-    "JOBLANDERIS": "Joblander is a platform for developers and recruiters which connects them based on shared interests and skill sets.",
-    "SEARCHINGFORJOB" : "Searching for a job at IT Field?",
+    "JOBLANDERIS": "Joblander is a platform for recruiters and job seekers which connects them based on shared interests and skill sets.",
+    "SEARCHINGFORJOB" : "Searching for a job that suits you??",
     "REGISTERONOUR" : "Register on our platform where you can fill your profile with detailed information about your skills, which helps Recruiters find You 👈!",
     "WHATISOURPURPOSE" : "What is our purpose?",
-    "OURPURPOSE" : "Our purpose is to make it easier for developers to find jobs that suit them best, and for recruiters to find the ideal candidates for their vacancies!",
-    "FINDYOURJOB" : "Find your desired job at our platform!"
+    "OURPURPOSE" : "Our purpose is to make it easier for people to find jobs that suit them best, and for recruiters to find the ideal candidates for their vacancies!",
+    "FINDYOURJOB" : "Find your desired job at our platform!",
+
+
+    "TOPRECRUITORS" : "Here are some of the top recruitors on platform!",
+    "LETSFINDJOB" : "Let's find desired job for you togheter!"
+
+
 }
 

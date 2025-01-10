@@ -1,27 +1,45 @@
 
 <div class="about-align" >
+    <div class="about-background"></div>
     <app-about class="about-component" ></app-about>
 </div>
 
 <div class="home">
     <div class="home-fixed-back">
-        <img src="assets/photos/trygif.gif" alt="" class="home-fixed-back-img">
+        <p class="find-job">{{"LETSFINDJOB" |translate}}</p>
+        <img src="assets/photos/tryback.gif" alt="" class="home-fixed-back-img">
     </div>
-  <div class="home-glass">
     <div class="home-align">
-        <div class="vacany-align">
-          <div *ngFor="let vc of vacanys; trackBy: trackByVacany" data-aos="fade-up">
-            <div [routerLink]="['/apply']" [queryParams]="{vacany: getVacanyData(vc)}" class="vacancy-height">
-              <app-vacancy-card [vacany]="vc" class="vacancy" data-aos="fade-up"></app-vacancy-card>
+
+    <div class="center-recruitors">
+      <P class="recruitors"> {{"TOPRECRUITORS"|translate}}</P>
+    </div>
+        <div class="company-align">
+            <div class="company-width">
+              <div *ngFor="let c of company;" data-aos="fade-in">
+                <app-company-card [company]="c" class="company" ></app-company-card>
+            </div>
+          </div>
+ 
+        </div>
+
+        <div class="vacancy-component">
+            <div class="filter-align">       
+              <app-filter class="filter-component"></app-filter>
+            </div>
+          <div class="vacany-align">
+            <div *ngFor="let vc of vacanys; trackBy: trackByVacany">
+              <div [routerLink]="['/apply']" [queryParams]="{vacany: getVacanyData(vc)}" class="vacancy-height">
+                <app-vacancy-card [vacany]="vc" class="vacancy" data-aos="fade-up"></app-vacancy-card>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-  </div>
-</div>
-<div class="about-align">
-    <app-about class="about-component"></app-about>
-</div>
 
+
+      </div>
+</div>
+<div class="newabout">
+</div>
 
 

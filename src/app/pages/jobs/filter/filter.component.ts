@@ -1,8 +1,8 @@
-import { Component, model, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatSelect, MatSelectModule } from '@angular/material/select';
 import { MatIcon, MatIconModule } from '@angular/material/icon';
 import { TranslateModule } from '@ngx-translate/core';
-import { FormControl, NgModel, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { NgClass } from '@angular/common';
 @Component({
   selector: 'app-filter',
@@ -16,7 +16,8 @@ import { NgClass } from '@angular/common';
     NgClass
   ],
   templateUrl: './filter.component.html',
-  styleUrl: './filter.component.scss'
+  styleUrls: ['./filter.component.scss']
+
 })
 export class FilterComponent implements OnInit{
   ngOnInit(): void {

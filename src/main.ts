@@ -8,10 +8,11 @@ import { HttpClient } from '@angular/common/http';
 import { HttpLoaderFactory } from './http-loader.factory';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 bootstrapApplication(AppComponent, {
   providers: [
     importProvidersFrom(HttpClientModule),
-    [importProvidersFrom(BrowserAnimationsModule)] ,
+    importProvidersFrom(BrowserAnimationsModule),  
     importProvidersFrom(
       TranslateModule.forRoot({
         loader: {
@@ -21,6 +22,7 @@ bootstrapApplication(AppComponent, {
         }
       })
     ),
-    ...appConfig.providers, provideAnimationsAsync(), provideAnimationsAsync(),
+    ...appConfig.providers,
+    provideAnimationsAsync(), 
   ]
-})
+});

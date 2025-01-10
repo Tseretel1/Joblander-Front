@@ -27,3 +27,17 @@ export class VacanyModel {
   }
   export const vacanyList: VacanyModel[] = [];
   
+  export class CompanyModel {
+    companyName: string;
+    logo :string;
+
+    constructor(
+        companyName: string,
+        logo: string,
+        ) {
+      this.companyName = companyName;
+      this.logo = logo;
+    }
+  }
+  export const companyList: CompanyModel[] = [];
+  

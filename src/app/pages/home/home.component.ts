@@ -1,12 +1,13 @@
 import { CommonModule } from '@angular/common';
-import { Component, mergeApplicationConfig, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { VacancyCardComponent } from "./components/vacancy-card/vacancy-card.component";
-import { VacanyModel } from './models/vacany-model';
+import { companyList, CompanyModel, VacanyModel } from './models/vacany-model';
 import { RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
-import { FilterComponent } from "./components/filter/filter.component";
 import { AboutComponent } from "./components/about/about.component";
 import * as  AOS from 'aos';
+import { CompanyCardComponent } from "./components/company-card/company-card.component";
+import { FilterComponent } from '../jobs/filter/filter.component';
 @Component({
   selector: 'app-home',
   imports: [
@@ -15,20 +16,29 @@ import * as  AOS from 'aos';
     RouterLink,
     TranslateModule,
     AboutComponent,
+    CompanyCardComponent,
+    FilterComponent
 ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit ,OnDestroy{
   vacanys: VacanyModel[] = [];
-
+  ngAfterViewChecked() {
+    AOS.refresh();
+  }
   ngOnInit(): void {
-    this.createVacancys();
 
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setTimeout(() => {
+      this.createVacancys();
+      this.createCompanies();
+      console.log(this.company);
+    }, 100);
     AOS.init({
-      duration: 1000,
+      duration: 500,      
       easing: 'ease-in-out',
-      once: true 
+      once :true,
     });
   }
   ngOnDestroy(): void {
@@ -82,7 +92,7 @@ export class HomeComponent implements OnInit ,OnDestroy{
       'Lead teams in delivering innovative and scalable solutions.',
     ];
 
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < 19; i++) {
       const title = vacancyTitle[i % vacancyTitle.length];
       const vacancyPhoto = `https://res.cloudinary.com/ds1q7oiea/image/upload/v1729175304/odvhx1dy8ievkzxhkdoo.webp`;
       const publisherPhoto = `https://randomuser.me/api/portraits/men/${Math.floor(Math.random() * 100)}.jpg`; 
@@ -105,6 +115,30 @@ export class HomeComponent implements OnInit ,OnDestroy{
     }
   }
 
+  company: CompanyModel[] = [];
+
+  createCompanies() {
+    const companyNames = [
+      'Tech Solutions Ltd.',
+      'Innovative Designs Inc.',
+      'Global Enterprises',
+      'Creative Labs',
+      'NextGen Technologies',
+    ];
+  
+  
+    companyList.length = 0;
+  
+    for (let i = 0; i < 3; i++) {
+      const companyName = companyNames[i % companyNames.length];
+      const logo = "https://logodix.com/logo/2157969.jpg";
+  
+      const company = new CompanyModel(companyName, logo);
+      companyList.push(company);
+      this.company = companyList;
+    }
+  }
+  
 
   optionVisible :boolean = false;
   openOption(){
