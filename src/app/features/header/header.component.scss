@@ -1,5 +1,4 @@
 $primaryColor : rgb(50 170 160 / var(--tw-text-opacity, 1));
-$backgroundColor :  rgb(20 30 55 / var(--tw-bg-opacity, 1));
 .center-header {
     width: 100%;
     display: flex;
@@ -10,7 +9,8 @@ $backgroundColor :  rgb(20 30 55 / var(--tw-bg-opacity, 1));
         width: 100%;
         display: flex;
         justify-content: center;
-        background-color: $backgroundColor ;
+        backdrop-filter: blur(25px);
+        background-color: rgba(0, 0, 0, 0.329);
         .header-align {
             display: flex;
             justify-content: space-between;

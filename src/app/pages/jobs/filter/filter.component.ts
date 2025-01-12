@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewChecked, Component, OnDestroy, OnInit } from '@angular/core';
 import { MatSelect, MatSelectModule } from '@angular/material/select';
 import { MatIcon, MatIconModule } from '@angular/material/icon';
 import { TranslateModule } from '@ngx-translate/core';
-import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { NgClass } from '@angular/common';
+import * as  AOS from 'aos';
+import {CdkDrag} from '@angular/cdk/drag-drop';
 @Component({
   selector: 'app-filter',
   imports: [
@@ -13,18 +15,26 @@ import { NgClass } from '@angular/common';
     ReactiveFormsModule,
     MatSelect,
     MatIcon,
-    NgClass
+    NgClass,
   ],
   templateUrl: './filter.component.html',
   styleUrls: ['./filter.component.scss']
 
 })
-export class FilterComponent implements OnInit{
-  ngOnInit(): void {
-    this.selectedOption = new FormControl('1');
+export class FilterComponent implements OnInit,OnDestroy, AfterViewChecked{
+  ngAfterViewChecked() {
+    AOS.refresh();
   }
-  selectedOption = new FormControl('1');
-
+  ngOnInit(): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    AOS.init({
+      duration: 500,      
+      easing: 'ease-in-out',
+    });
+  }
+  ngOnDestroy(): void {
+    AOS.refreshHard(); 
+  }
   filtersvisible:boolean = false;
   showfilters(){
     if(!this.filtersvisible)

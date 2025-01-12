@@ -1,6 +1,6 @@
 .card-align{
     width: 100%;
-    background-color: white;
+    background-color: rgb(34, 33, 33);
     position: relative;
     border-radius: 10px;
     overflow: hidden;
@@ -9,6 +9,10 @@
         font-size: 23px;
         z-index: 1;
         padding: 20px;
+        color: white;
+        display: flex;
+        justify-content: center;
+        text-align: center;
     }
     .logo-container{
         width: 100%;

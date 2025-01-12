@@ -1,4 +1,4 @@
-$primaryColor: rgb(50 170 160 / var(--tw-text-opacity, 1));
+$primaryColor:white;
 .center-component {
   width: 100%;
   display: flex;
@@ -10,7 +10,11 @@ $primaryColor: rgb(50 170 160 / var(--tw-text-opacity, 1));
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: rgba(0, 0, 0, 0.238);
+    border-radius: 10px;
+    padding: 10px;
     width: 45%;
+    box-shadow:  0px 0px 2px black inset;
       .find-job {
         color: $primaryColor;
         font-family: Bold;
@@ -20,9 +24,10 @@ $primaryColor: rgb(50 170 160 / var(--tw-text-opacity, 1));
       display: flex;
       flex-direction: column;
       position: sticky;
-      top: 50px;
+      top: 80px;
       width: 100%;
       gap: 15px;
+      z-index: 2;
       .background-container {
         width: 100%;
         overflow: hidden;
@@ -59,7 +64,7 @@ $primaryColor: rgb(50 170 160 / var(--tw-text-opacity, 1));
         padding: 10px;
         .content-title {
           color: $primaryColor;
-          text-shadow: 0px 0px 3px $primaryColor;
+          text-shadow: 0px 0px 2px white;
           font-family: Bold;
           margin: 0;
           font-size: 25px;
@@ -69,7 +74,7 @@ $primaryColor: rgb(50 170 160 / var(--tw-text-opacity, 1));
           text-align: center;
           color: white;
           animation: 1.5s textAnim;
-          text-shadow: 0px 0px 2px whitesmoke;
+          text-shadow: 0px 0px 2px black;
         }
       }
       .about-img-container {
@@ -92,31 +97,6 @@ $primaryColor: rgb(50 170 160 / var(--tw-text-opacity, 1));
     }
   }
 }
-
-@keyframes imgAnim {
-  0% {
-    scale: 0.5;
-  }
-  50% {
-    scale: 1.1;
-  }
-  100% {
-    scale: 1;
-  }
-}
-
-@keyframes textAnim {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    text-shadow: 0px 0px 10px white;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
 @media screen and (max-width: 1500px) {
   .center-component {
     padding: 0px;

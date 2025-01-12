@@ -1,13 +1,13 @@
 <div class="component-align">
-    <div class="open-filter" (click)="showfilters()">
+    <div class="open-filter" (click)="showfilters()" >
         <p class="filter-title">{{"FILTER"|translate}} </p> 
         <mat-icon class="arrow" [ngClass]="{'arrow-anim':filtersvisible}">keyboard_arrow_right</mat-icon>
     </div>
     <div class="comp-body" [ngClass]="{'comp-visible':filtersvisible}">
-        <div class="select-align">
+        <div class="select-align" data-aos="fade-right">
             <p class="select-title">{{"CATEGORIES" | translate}}</p>
             <mat-form-field class="formparenmt">
-              <mat-select [formControl]="selectedOption" class="select">
+              <mat-select  class="select">
                 <mat-option value="1" class="matoption">{{"ALLCATEGORIES" | translate}}</mat-option>
                 <mat-option value="1" >{{"IT" | translate}}</mat-option>
                 <mat-option value="1" >{{"ADMINANDMANAGEMENT" | translate}}</mat-option>
@@ -24,10 +24,10 @@
             </mat-form-field>
         </div>
 
-        <div class="select-align">
+        <div class="select-align" data-aos="fade-left">
             <p class="select-title">{{"UPLOADDATE" | translate}}</p>
             <mat-form-field class="formparenmt">
-              <mat-select [formControl]="selectedOption">
+              <mat-select>
                 <mat-option value="1" >{{"TODAY" | translate}}</mat-option>
                 <mat-option value="2">{{"LASTTHREEDAYS" | translate}}</mat-option>
                 <mat-option value="3">{{"LASTWEEK" | translate}}</mat-option>
@@ -36,10 +36,10 @@
             </mat-form-field>
         </div>
     
-        <div class="select-align"> 
+        <div class="select-align" data-aos="fade-right"> 
             <p class="select-title">{{"LOCATION" | translate}}</p>
             <mat-form-field class="formparenmt">
-            <mat-select [formControl]="selectedOption">
+            <mat-select>
                 <mat-option value="1" >{{"TBILISI" | translate}}</mat-option>
                 <mat-option value="2">{{"BATUMI" | translate}}</mat-option>
                 <mat-option value="3">{{"KUTAISI" | translate}}</mat-option>

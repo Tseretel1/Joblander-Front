@@ -12,7 +12,7 @@ export class FooterComponent implements OnInit , OnDestroy{
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
     Aos.init({
-      duration: 6000,
+      duration: 100,
       easing: 'ease-in-out',
     });
   }

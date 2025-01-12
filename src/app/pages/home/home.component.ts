@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { AfterViewChecked, Component, OnDestroy, OnInit } from '@angular/core';
 import { VacancyCardComponent } from "./components/vacancy-card/vacancy-card.component";
 import { companyList, CompanyModel, VacanyModel } from './models/vacany-model';
 import { RouterLink } from '@angular/router';
@@ -8,6 +8,8 @@ import { AboutComponent } from "./components/about/about.component";
 import * as  AOS from 'aos';
 import { CompanyCardComponent } from "./components/company-card/company-card.component";
 import { FilterComponent } from '../jobs/filter/filter.component';
+import { RecruiterComponent } from './components/recruiter/recruiter.component';
+import { CdkDrag } from '@angular/cdk/drag-drop';
 @Component({
   selector: 'app-home',
   imports: [
@@ -17,39 +19,42 @@ import { FilterComponent } from '../jobs/filter/filter.component';
     TranslateModule,
     AboutComponent,
     CompanyCardComponent,
-    FilterComponent
+    FilterComponent,
+    RecruiterComponent,
 ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit ,OnDestroy{
+export class HomeComponent implements OnInit ,OnDestroy,AfterViewChecked{
   vacanys: VacanyModel[] = [];
-  ngAfterViewChecked() {
-    AOS.refresh();
-  }
-  ngOnInit(): void {
 
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  ngOnInit(): void {
+    AOS.init({
+      duration: 100,
+      easing: 'ease-in-out',
+      once: false, 
+    });
     setTimeout(() => {
       this.createVacancys();
       this.createCompanies();
-      console.log(this.company);
     }, 100);
-    AOS.init({
-      duration: 500,      
-      easing: 'ease-in-out',
-      once :true,
-    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
+
   ngOnDestroy(): void {
-    AOS.refreshHard(); 
+    AOS.refreshHard();
   }
+
+  ngAfterViewChecked() {
+    AOS.refresh();
+  }
+
   getVacanyData(vc: VacanyModel) {
-    return JSON.stringify(vc);  
+    return JSON.stringify(vc);
   }
 
   trackByVacany(index: number, item: VacanyModel) {
-    return item.title; 
+    return item.title;
   }
   
   createVacancys() {
@@ -92,7 +97,7 @@ export class HomeComponent implements OnInit ,OnDestroy{
       'Lead teams in delivering innovative and scalable solutions.',
     ];
 
-    for (let i = 0; i < 19; i++) {
+    for (let i = 0; i < 20; i++) {
       const title = vacancyTitle[i % vacancyTitle.length];
       const vacancyPhoto = `https://res.cloudinary.com/ds1q7oiea/image/upload/v1729175304/odvhx1dy8ievkzxhkdoo.webp`;
       const publisherPhoto = `https://randomuser.me/api/portraits/men/${Math.floor(Math.random() * 100)}.jpg`; 
@@ -147,6 +152,17 @@ export class HomeComponent implements OnInit ,OnDestroy{
     }
     else{
       this.optionVisible = false;
+    }
+  }
+
+  scrollToCompany() {
+    const element = document.getElementById('home');
+    
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth', 
+        block: 'start' 
+      });
     }
   }
 }

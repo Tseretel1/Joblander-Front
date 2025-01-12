@@ -1,0 +1,180 @@
+$primaryColor: rgb(50 170 160 / var(--tw-text-opacity, 1));
+
+.recruiter {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 30px 0px;
+  overflow: hidden;
+  .recruiter-align {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    width: 90%;
+    justify-content: center;
+    .about-content {
+      width: 75%;
+      display: flex;
+      gap: 30px;
+      background-color: rgba(0, 0, 0, 0.358);
+      padding: 30px 10px;
+      border-radius: 10px;
+      flex-direction: column;
+      align-items: center;
+      .content-title {
+        color: white;
+        font-family: Bold;
+        margin: 0;
+        max-width: 450px;
+        font-size: 25px;
+        text-shadow: 0px 0px 10px black;
+        text-align: center;
+      }
+      .content-align {
+        display: flex;
+        width: 100%;
+        justify-content: space-evenly;
+        .content-container {
+          display: flex;
+          border-radius: 10px;
+          flex-direction: column;
+          align-items: center;
+          gap: 20px;
+          justify-content: center;
+          overflow: hidden;
+          border-radius: 10px;
+          .offer-title {
+            color:$primaryColor;
+            font-family: semibold;
+            font-size: 22px;
+          }
+          .offer-paragraph {
+            display: flex;
+            align-items: center;
+            gap:15px;
+            align-items: flex-start;
+            .we-offer-text {
+              color: white;
+              padding: 10px 0px;
+              font-family: Bold;
+              font-size: 25px;
+            }
+            .ul {
+              list-style-type: none;
+              border-radius: 10px;
+              padding-left: 0;
+              display: flex;
+              flex-direction: column;
+              gap: 15px;
+              .li {
+                position: relative;
+                padding-left: 20px;
+                color: rgb(199, 195, 195);
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                .success-icon {
+                  width: 20px;
+                }
+              }
+            }
+          }
+
+          .content-subject {
+            max-width: 450px;
+            text-align: center;
+            color: white;
+            animation: 1.5s textAnim;
+            text-shadow: 0px 0px 2px black;
+          }
+        }
+
+        .about-img-container {
+          width: 450px;
+          height: 250px;
+          border-radius: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          overflow: hidden;
+          z-index: 1;
+          position: sticky;
+          top: 10px;
+          .about-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+          }
+        }
+      }
+    }
+    .sticky-img-parent {
+      position: relative;
+      display: flex;
+      height: 100%;
+      .sticky-img-container {
+        width: 450px;
+        height: 250px;
+        min-height: 300px;
+        overflow: hidden;
+        position: sticky;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .about-img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 10px;
+        }
+      }
+    }
+    .what-we-offer {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      .offer-container {
+        width: 79%;
+        height: 300px;
+        overflow: hidden;
+        border-radius: 20px;
+        .offer-img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 1000px) {
+  .recruiter {
+    .recruiter-align {
+      .about-content {
+        width: 100%;
+        .content-title{
+            font-size: 20px;
+           }
+        .content-align{
+            flex-direction: column;
+            gap: 30px;
+            align-items: center;
+            .content-container{
+                .offer-paragraph{
+                    flex-direction: column;
+                }
+            }
+            
+            .about-img-container {
+                width: 90%;
+                height: 150px;
+            }
+        }
+      }
+    }
+  }
+}
