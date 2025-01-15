@@ -1,15 +1,31 @@
 <div class="center-component">
     <div class="component-align">
-
         <div class="card-align">
-            <div class="signup-align">
-            
+            <div class="reg-log-align" [ngClass]="{'reg-log-reverse': loginVisible}">
+                <div class="account-backgrounds">
+                    <app-registration class="registration" [ngClass]="{'register-not-visible': loginVisible}"></app-registration>
+                    <app-login class="registration"[ngClass]="{'register-not-visible': !loginVisible}"></app-login>
+                </div>
+                <button class="switch" (click)="switchAuth()">{{switchText  |translate}}</button>
             </div>
-            <app-registration class="registration" data-aos="fade-left" *ngIf="!loginVisible"></app-registration>
-            <app-login class="registration" data-aos="fade-left" *ngIf="loginVisible"></app-login>
+            <div class="signup-align" [ngClass]="{'sign-up-reverse': loginVisible}">
+                <div class="sign-up-header">
+                    <p class="sign-up-text">{{"DONTHAVEANACCOUNT"|translate }} </p> 
+                    <p class="sign-up-text">{{"DONTHAVEANACCOUNT"|translate }} </p> 
+                    <p class="sign-up-text">{{"DONTHAVEANACCOUNT"|translate }} </p> 
+                    <p class="sign-up-text">{{"DONTHAVEANACCOUNT"|translate }} </p> 
+                    <p class="sign-up-text">{{"DONTHAVEANACCOUNT"|translate }} </p> 
+                    <p class="sign-up-text">{{"DONTHAVEANACCOUNT"|translate }} </p> 
+                    <p class="sign-up-text">{{"DONTHAVEANACCOUNT"|translate }} </p> 
+                    <p class="sign-up-text">{{"DONTHAVEANACCOUNT"|translate }} </p> 
+                    <p class="sign-up-text">{{"DONTHAVEANACCOUNT"|translate }} </p> 
+                    <p class="sign-up-text">{{"DONTHAVEANACCOUNT"|translate }} </p> 
+                </div>
+            </div>
         </div>
-        <button class="switch" (click)="switchAuth()">Switch</button>
     </div>
 </div>
 
-<app-modal class="modal"*ngIf="modalVisible" (click) = "closeModal()" [message]="ModalMessage"></app-modal>
+<div class="modal-parent">
+    <app-modal class="modal"*ngIf="modalVisible" (click) = "closeModal()" [message]="ModalMessage"></app-modal>
+</div>

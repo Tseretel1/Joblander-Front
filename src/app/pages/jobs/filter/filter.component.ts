@@ -5,7 +5,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgClass } from '@angular/common';
 import * as  AOS from 'aos';
-import {CdkDrag} from '@angular/cdk/drag-drop';
+
 @Component({
   selector: 'app-filter',
   imports: [

@@ -8,14 +8,13 @@ import {
 import { TranslateModule } from '@ngx-translate/core';
 import * as AOS from 'aos';
 import { RegisterService, User } from './register.service';
-import { consumerAfterComputation } from '@angular/core/primitives/signals';
 import { SharedServiceService } from '../../../shared/services/shared-service.service';
 
 @Component({
   selector: 'app-registration',
   imports: [TranslateModule, ReactiveFormsModule],
-  templateUrl: './registration.component.html',
   styleUrl: './registration.component.scss',
+  templateUrl: './registration.component.html',
 })
 export class RegistrationComponent
   implements OnInit, OnDestroy, AfterViewChecked
@@ -48,6 +47,10 @@ export class RegistrationComponent
     AOS.refresh();
   }
 
+
+
+  userExists :string = "USEREXISTS";
+  youRegistered: string = "YOUREGISTEREDSECCESSFULLY";
   register(){
     if(this.registerForm.valid){
       const userObj : User ={
@@ -58,16 +61,24 @@ export class RegistrationComponent
         password: this.registerForm.value.password,
       }  
       this.service.registration(userObj).subscribe(
-        (resp)=>{
-          if(resp.success){
-            this.sharedService.openModal(true);
-            this.sharedService.updateModaltext(resp.message);
-            this.registerForm.reset();
+        (resp) => {
+          if (resp.success) {
+            this.sharedService.updateModaltext(this.youRegistered, true);
+          } else {
+            this.sharedService.updateModaltext(this.userExists, false);
           }
           this.sharedService.openModal(true);
-          this.sharedService.updateModaltext(resp.message);
+          if (resp.success) {
+            this.registerForm.reset();
+          }
         },
-      )
+        (error) => {
+          console.error("Registration failed:", error);
+          this.sharedService.updateModaltext("Something went wrong. Please try again.", false);
+          this.sharedService.openModal(true);
+        }
+      );
+      
     }
   }
 }

@@ -27,15 +27,20 @@ export class AuthentificationComponent implements OnInit, OnDestroy, AfterViewCh
   }
   modalSubscription: Subscription | undefined;
   modalTextSubscription: Subscription | undefined;
+
   ngOnInit(): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     this.modalSubscription = this.sharedService.modalOpened$.subscribe((data) => {
       if(data){
         this.openModal();        
       }
     });
 
-    this.modalTextSubscription = this.sharedService.modalText$.subscribe((data) => {
+    this.modalTextSubscription = this.sharedService.modalText$.subscribe(({ data, userRegistered }) => {
       this.ModalMessage = data;
+      if(userRegistered){
+        this.switchAuth();
+      }
     });
     AOS.init({
       duration: 100,
@@ -55,19 +60,24 @@ export class AuthentificationComponent implements OnInit, OnDestroy, AfterViewCh
     AOS.refresh();
   }
   
+  switchText = "LOGIN"
   
   loginVisible: boolean = false;
   switchAuth() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     if (this.loginVisible) {
       this.loginVisible = false;
+      this.switchText = "LOGIN";
     } else {
       this.loginVisible = true;
+      this.switchText = "REGISTER";
     }
   }
 
   ModalMessage: string = '';
   modalVisible: boolean = false;
   
+
   closeModal() {
     this.modalVisible = false;
   }

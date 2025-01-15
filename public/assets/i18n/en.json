@@ -106,6 +106,17 @@
     "WHATWEOFFER8": "Save and revisit top candidates",
     "WHATWEOFFER9": "Effective communication with potential hires",
     "WHATWEOFFER10": "Review, like, and shortlist applicants",
-    "WHATWEOFFER11": "user searching and offering them a job"
+    "WHATWEOFFER11": "user searching and offering them a job",
+
+
+
+
+
+    "USEREXISTS" : "User with given email already exists, please use any other email to register!",
+    "EMAILORPASSINCORRECT" :"Email or password is incorrect",
+    "YOUREGISTEREDSECCESSFULLY" :"Congrats! you successfully on our platform!",
+    "SIGNUPHEADER" :"",
+    "DONTHAVEACCOUNT" :"You don't have an account?",
+    "HAVEACCOUNT" :"Already have an account?"
 }
 

@@ -3,8 +3,8 @@ $primaryColor : rgb(50 170 160 / var(--tw-text-opacity, 1));
 .center-card{
     display: flex;
     width: 100%;
-    background-color: rgb(0 0 0 / 57%);
     border-radius: 20px;
+    animation: 0.5s componentAnim;
     .card{
         display: flex;
         flex-direction: column;
@@ -114,4 +114,17 @@ $primaryColor : rgb(50 170 160 / var(--tw-text-opacity, 1));
         }
        
     }
+}
+
+
+@keyframes componentAnim {
+  0%{
+    opacity: 0;
+  }
+  50%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
 }

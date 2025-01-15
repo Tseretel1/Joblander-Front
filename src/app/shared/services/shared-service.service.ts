@@ -14,12 +14,13 @@ export class SharedServiceService {
   openModal(data: boolean = false) {
     this.modalVisible.next(data);
   }
-
-  private modalText = new BehaviorSubject<any>(null);
+  private modalText = new BehaviorSubject<{ data: string; userRegistered: boolean }>({
+    data: "",
+    userRegistered: false,
+  });
   modalText$ = this.modalText.asObservable();
-  
-  
-  updateModaltext(data: string = "") {
-    this.modalText.next(data);
+
+  updateModaltext(data: string = "", userRegistered: boolean = false) {
+    this.modalText.next({ data, userRegistered });
   }
 }

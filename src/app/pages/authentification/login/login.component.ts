@@ -5,8 +5,8 @@ import * as AOS from 'aos';
 @Component({
   selector: 'app-login',
   imports: [ReactiveFormsModule, TranslateModule],
-  templateUrl: './login.component.html',
-  styleUrl: './login.component.scss'
+  styleUrl: './login.component.scss',
+  templateUrl: './login.component.html'
 })
 export class LoginComponent {
 
