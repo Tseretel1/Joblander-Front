@@ -28,9 +28,6 @@ $backgroundColor :  rgb(20 30 55 / var(--tw-bg-opacity, 1));
                     margin: 0;     
                     transition: 0.3s;
                 }
-                &:hover .title {
-                    text-shadow: 0px 0px 2px $primaryColor;
-                }
             }
             .navbar-button{
                 cursor: pointer;
@@ -78,8 +75,6 @@ $backgroundColor :  rgb(20 30 55 / var(--tw-bg-opacity, 1));
         display: grid;
         grid-template-columns: 50% 50%;
         transition: width 0.3s ease; 
-        animation: 0.3s openNavbar;
-        
         .navbar{
             display: flex;
             background-color: rgba(6, 5, 21, 0.801);
@@ -87,7 +82,6 @@ $backgroundColor :  rgb(20 30 55 / var(--tw-bg-opacity, 1));
             padding-top: 50px;
             align-items: center;
             justify-content: space-between;
-            animation: 0.5s navbarAnimation;
             .language{
                 width: 100%;
                 padding: 40px 0px;

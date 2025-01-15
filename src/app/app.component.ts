@@ -3,7 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { HeaderComponent } from './features/header/header.component';
 import { MobileHeaderComponent } from './features/mobile-header/mobile-header.component';
-import { FooterComponent } from "./features/footer/footer.component";
+import { FooterComponent } from './features/footer/footer.component';
 
 @Component({
   selector: 'app-root',
@@ -15,13 +15,22 @@ export class AppComponent implements OnInit {
   title = 'Job Lander';
 
   constructor(private translate: TranslateService) {
-    const storedLang = localStorage.getItem('language');
-    const defaultLang = storedLang ? storedLang : 'geo';
-    this.translate.setDefaultLang(defaultLang);
-    this.translate.use(defaultLang);
+
   }
 
   ngOnInit() {
-  }
+    const storedLang = localStorage.getItem('lang');
+    
+    console.log("Stored language from localStorage: ", storedLang);
 
+    if (storedLang === "en") {
+      this.translate.setDefaultLang('en');
+      this.translate.use('en');
+      console.log('Language set to English');
+    } else {
+      this.translate.setDefaultLang('geo');
+      this.translate.use('geo');
+      console.log('Language set to Georgian');
+    }
+  }
 }

@@ -1,0 +1,115 @@
+.center-modal{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    .modal-background{
+        width: 100%;
+        height: 100%;
+        backdrop-filter: blur(3px);
+        position: absolute;
+        animation: 0.5s modalFade;
+        z-index: 1;
+    }
+    .modal{
+        width: 100%;
+        max-width: 600px;
+        height: 200px;
+        border-radius: 20px;
+        background-color: rgb(31, 31, 71);
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        flex-direction: column;
+        box-shadow: 0px 0px 10px  rgb(31, 31, 71);
+        animation: 0.5s cardAnim;
+
+        .close-align{
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            .x-button {
+                width: 30px;
+                height: 30px;
+                border: none;
+                cursor: pointer;
+                position: relative;
+                background-color: transparent;
+                overflow: visible;
+                }
+                .x-button::before {
+                content: "";
+                position: absolute;
+                width: 28px;
+                height: 4px;
+                background-color: red;
+                animation: 1s CloseBefore;
+                top: 10px;
+                transform: translate(-50%, -50%) rotate(135deg);
+                }
+                
+                .x-button::after {
+                content: "";
+                position: absolute;
+                width: 28px;
+                height: 4px;
+                background-color: red;
+                top: 10px;
+                transform: translate(-50%, -50%) rotate(-135deg); 
+                animation: 1s CloseAfter;
+                }
+                @keyframes CloseAfter {
+                0% {
+                    transform: translate(-50%, -50%) rotate(0deg); 
+                }
+                100% {
+                    transform: translate(-50%, -50%) rotate(-135deg); 
+                }
+                }
+                
+                @keyframes CloseBefore {
+                0% {
+                    transform: translate(-50%, -50%) rotate(0deg); 
+                }
+                100% {
+                    transform: translate(-50%, -50%) rotate(135deg);
+                }
+            }
+        }
+        .message-align{
+            height: 100%;
+            width: 90%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .message{
+            color: white;
+            font-size: 23px;
+        }
+    }
+}
+@keyframes modalFade {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes cardAnim {
+    0%{
+        opacity: 0;
+        scale: 0.7;
+    }
+    50%{
+        opacity: 1;
+        scale: 1.1;
+    }
+    100%{
+        scale: 1;
+    }
+}

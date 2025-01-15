@@ -1,5 +1,4 @@
 import { AfterViewChecked, Component, OnInit } from '@angular/core';
-import { VacanyModel } from '../home/models/vacany-model';
 import * as  AOS from 'aos';
 
 import { CommonModule } from '@angular/common';
@@ -7,6 +6,7 @@ import { VacancyCardComponent } from '../home/components/vacancy-card/vacancy-ca
 import { RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { FilterComponent } from '../jobs/filter/filter.component';
+import { VacanyModel } from '../../shared/models/vacany-model';
 
 @Component({
   selector: 'app-jobs',

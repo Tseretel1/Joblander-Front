@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { CompanyModel } from '../../models/vacany-model';
+import { CompanyModel } from '../../../../shared/models/vacany-model';
 
 @Component({
   selector: 'app-company-card',

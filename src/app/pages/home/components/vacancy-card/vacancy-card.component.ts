@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { VacanyModel } from '../../models/vacany-model';
 import { TranslateModule } from '@ngx-translate/core';
+import { VacanyModel } from '../../../../shared/models/vacany-model';
 
 @Component({
   selector: 'app-vacancy-card',

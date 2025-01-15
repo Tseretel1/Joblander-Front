@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { AfterViewChecked, Component, OnDestroy, OnInit } from '@angular/core';
 import { VacancyCardComponent } from "./components/vacancy-card/vacancy-card.component";
-import { companyList, CompanyModel, VacanyModel } from './models/vacany-model';
 import { RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { AboutComponent } from "./components/about/about.component";
@@ -9,7 +8,10 @@ import * as  AOS from 'aos';
 import { CompanyCardComponent } from "./components/company-card/company-card.component";
 import { FilterComponent } from '../jobs/filter/filter.component';
 import { RecruiterComponent } from './components/recruiter/recruiter.component';
-import { CdkDrag } from '@angular/cdk/drag-drop';
+import { appRoutes,Routes } from '../../shared/routes';
+import { companyList, CompanyModel, VacanyModel } from '../../shared/models/vacany-model';
+
+
 @Component({
   selector: 'app-home',
   imports: [
@@ -25,9 +27,11 @@ import { CdkDrag } from '@angular/cdk/drag-drop';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit ,OnDestroy,AfterViewChecked{
+export class HomeComponent implements OnInit ,OnDestroy, AfterViewChecked{
+  
+  routes: Routes = appRoutes;
+  
   vacanys: VacanyModel[] = [];
-
   ngOnInit(): void {
     AOS.init({
       duration: 100,

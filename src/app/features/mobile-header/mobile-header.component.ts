@@ -3,38 +3,57 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-
+import * as AOS from 'aos';
+import { appRoutes,Routes } from '../../shared/routes';
 @Component({
   selector: 'app-mobile-header',
   imports: [CommonModule,TranslateModule,RouterLink,RouterLinkActive],
-  animations: [
-    trigger('fadeOut', [
-      transition(':leave', [
-        animate('300ms', style({ width: '0%',}))
-      ])
-    ]),
-  ],
   templateUrl: './mobile-header.component.html',
   styleUrl: './mobile-header.component.scss'
 })
 export class MobileHeaderComponent  implements OnInit{
+  routes: Routes = appRoutes;
   constructor(private translate: TranslateService){ 
   }
+
   ngOnInit(): void {
-    this.translate.use('en').subscribe(() => {
-      this.lang = true;
+    this.langDetect();
+    AOS.init({
+      duration: 100,
+      easing: 'ease-in-out',
+      once: false, 
     });
   }
+
+  ngOnDestroy(): void {
+    AOS.refreshHard();
+  }
+
+  ngAfterViewChecked() {
+    AOS.refresh();
+  }
+
+  langDetect(){
+    const lang = localStorage.getItem('lang');
+    if(lang == 'geo'){
+      this.lang = true;
+    }
+    else{
+      this.lang = false
+    }
+  }
+
   lang:boolean = false;
+  //eseni calke serviceshi gaitane bevr kods imeoreb
   en(){
+    localStorage.setItem('lang', 'en');
     this.translate.use("en")
     this.lang = true;
-    localStorage.setItem('lang', 'en');
   }
   geo(){
+    localStorage.setItem('lang', 'geo');
     this.translate.use("geo")
     this.lang = false;
-    localStorage.setItem('lang', 'geo');
   }
 
   navbarvisible :boolean = false; 

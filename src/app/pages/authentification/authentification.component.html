@@ -1,35 +1,15 @@
 <div class="center-component">
-    <div class="form-container">
-        <form class="form">
-            <p class="title">{{'REGISTER' |translate}} </p>
-            <p class="message">{{"SIGNUPFORAPP" |translate}} </p>
-                <div class="flex">
-                <label>
-                    <input class="input" type="text" placeholder="" required="">
-                    <span>{{"NAME" |translate}} </span>
-                </label>
+    <div class="component-align">
 
-                <label>
-                    <input class="input" type="text" placeholder="" required="">
-                    <span>{{"LASTNAME" |translate}}</span>
-                </label>
-            </div>  
-                    
-            <label>
-                <input class="input" type="email" placeholder="" required="">
-                <span>{{"GMAIL" |translate}}</span>
-            </label> 
-                
-            <label>
-                <input class="input" type="password" placeholder="" required="">
-                <span>{{"PASSWORD" |translate}}</span>
-            </label>
-            <label>
-                <input class="input" type="password" placeholder="" required="">
-                <span>{{"REPEATPASSWORD" |translate}}</span>
-            </label>
-            <button class="submit">{{"SUBMIT"|translate}} </button>
-            <p class="signin">{{"HAVEANACCOUNT"|translate}} <a href="#">{{"SIGNIN"|translate}}</a> </p>
-        </form>
+        <div class="card-align">
+            <div class="signup-align">
+            
+            </div>
+            <app-registration class="registration" data-aos="fade-left" *ngIf="!loginVisible"></app-registration>
+            <app-login class="registration" data-aos="fade-left" *ngIf="loginVisible"></app-login>
+        </div>
+        <button class="switch" (click)="switchAuth()">Switch</button>
     </div>
 </div>
+
+<app-modal class="modal"*ngIf="modalVisible" (click) = "closeModal()" [message]="ModalMessage"></app-modal>

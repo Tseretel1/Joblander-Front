@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
-import { VacanyModel } from '../home/models/vacany-model';
 import { ActivatedRoute } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
+import { VacanyModel } from '../../shared/models/vacany-model';
 
 @Component({
   selector: 'app-apply',

@@ -2,13 +2,13 @@
     <div class="header"> 
         <div class="header-align">
             <div class="nav-align">
-                <p class="nav-link" routerLinkActive="active-link"  routerLink="/home">{{"HOME"|translate}}</p>
-                <p class="nav-link"routerLinkActive="active-link"  routerLink="/jobs">{{"JOBS"|translate}}</p>
-                <p class="nav-link"  routerLinkActive="active-link" routerLink="/publish" >{{"PUBLISH"|translate}}</p>
-                <p class="nav-link" routerLinkActive="active-link"  routerLink="/auth">{{"PROFILE"|translate}}</p>
+                <p class="nav-link" routerLinkActive="active-link"  [routerLink]="routes.home">{{"HOME"|translate}}</p>
+                <p class="nav-link"routerLinkActive="active-link"  [routerLink]="routes.jobs">{{"JOBS"|translate}}</p>
+                <p class="nav-link"  routerLinkActive="active-link"[routerLink]="routes.publish" >{{"PUBLISH"|translate}}</p>
+                <p class="nav-link" routerLinkActive="active-link"[routerLink]="routes.auth">{{"PROFILE"|translate}}</p>
             </div>
             <div class="header-title">
-                <img src="assets/icons/jobs3.png" alt="" class="suitcase">
+                <img src="assets/icons/jobs2.png" alt="" class="suitcase">
                 <p class="title">Job Lander</p>
                 <div class="language">
                     <button (click)="en()" *ngIf="lang"  class="lang-button" value="en">En</button>

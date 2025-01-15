@@ -23,12 +23,13 @@ $primaryColor : rgb(50 170 160 / var(--tw-text-opacity, 1));
                 gap: 16px;
                 cursor: pointer;
                 .suitcase {
-                    width: 60px;
+                    width: 50px;
+                    padding: 10px;
                 }
                 .title {
                     font-size: clamp(25px, 3vw, 10px);      
                     transition: 0.3s;
-                    color:$primaryColor;
+                    color: $primaryColor;
                     font-family: Bold;
                 }
                 &:hover .title {

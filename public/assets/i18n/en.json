@@ -65,14 +65,15 @@
 
     "SIGNUPFORAPP" : "Sign up to use every feature of the app!",
     "HAVEANACCOUNT" : "Already have an account?",
-    "SIGNIN" : "Sign in",
+    "LOGIN" : "Login",
+    "REGISTRATION" : "Registration",
     "SUBMIT" : "Submit",
     "REGISTER" : "Register",
     "NAME" : "Name",
     "LASTNAME" : "Lastname",
     "GMAIL" : "Gmail",
     "PASSWORD" : "Password",
-    "REPEATPASSWORD" : "Repeat Password",
+    "PHONENUMBER" : "Phone number",
     "PHOTO" : "Photo",
 
 
@@ -105,6 +106,6 @@
     "WHATWEOFFER8": "Save and revisit top candidates",
     "WHATWEOFFER9": "Effective communication with potential hires",
     "WHATWEOFFER10": "Review, like, and shortlist applicants",
-    "WHATWEOFFER11": "Centralized hub for job openings"
+    "WHATWEOFFER11": "user searching and offering them a job"
 }
 
