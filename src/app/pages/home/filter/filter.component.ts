@@ -19,7 +19,6 @@ import * as  AOS from 'aos';
   ],
   templateUrl: './filter.component.html',
   styleUrls: ['./filter.component.scss']
-
 })
 export class FilterComponent implements OnInit,OnDestroy, AfterViewChecked{
   ngAfterViewChecked() {

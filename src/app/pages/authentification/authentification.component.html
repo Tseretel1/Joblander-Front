@@ -3,24 +3,21 @@
         <div class="card-align">
             <div class="reg-log-align" [ngClass]="{'reg-log-reverse': loginVisible}">
                 <div class="account-backgrounds">
-                    <app-registration class="registration" [ngClass]="{'register-not-visible': loginVisible}"></app-registration>
-                    <app-login class="registration"[ngClass]="{'register-not-visible': !loginVisible}"></app-login>
+                    <app-registration class="registration" [ngClass]="{'register-not-visible': !loginVisible}"></app-registration>
+                    <app-login class="registration"[ngClass]="{'register-not-visible': loginVisible}"></app-login>
                 </div>
-                <button class="switch" (click)="switchAuth()">{{switchText  |translate}}</button>
+                <div class="switch-parent">
+                    <p class="switch-text">{{switchText|translate}} </p>
+                    <button class="switch" (click)="switchAuth()">{{switchButtonText  |translate}}</button>
+                </div>
             </div>
             <div class="signup-align" [ngClass]="{'sign-up-reverse': loginVisible}">
                 <div class="sign-up-header">
                     <p class="sign-up-text">{{"DONTHAVEANACCOUNT"|translate }} </p> 
-                    <p class="sign-up-text">{{"DONTHAVEANACCOUNT"|translate }} </p> 
-                    <p class="sign-up-text">{{"DONTHAVEANACCOUNT"|translate }} </p> 
-                    <p class="sign-up-text">{{"DONTHAVEANACCOUNT"|translate }} </p> 
-                    <p class="sign-up-text">{{"DONTHAVEANACCOUNT"|translate }} </p> 
-                    <p class="sign-up-text">{{"DONTHAVEANACCOUNT"|translate }} </p> 
-                    <p class="sign-up-text">{{"DONTHAVEANACCOUNT"|translate }} </p> 
-                    <p class="sign-up-text">{{"DONTHAVEANACCOUNT"|translate }} </p> 
-                    <p class="sign-up-text">{{"DONTHAVEANACCOUNT"|translate }} </p> 
-                    <p class="sign-up-text">{{"DONTHAVEANACCOUNT"|translate }} </p> 
                 </div>
+                <!-- <div class="img-container">
+                    <img src="assets/photos/newjob.jpg" alt="" class="img">
+                </div> -->
             </div>
         </div>
     </div>

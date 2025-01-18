@@ -63,9 +63,9 @@ export class RegistrationComponent
       this.service.registration(userObj).subscribe(
         (resp) => {
           if (resp.success) {
-            this.sharedService.updateModaltext(this.youRegistered, true);
+            this.sharedService.userRegistration(this.youRegistered, true);
           } else {
-            this.sharedService.updateModaltext(this.userExists, false);
+            this.sharedService.userRegistration(this.userExists, false);
           }
           this.sharedService.openModal(true);
           if (resp.success) {
@@ -74,7 +74,7 @@ export class RegistrationComponent
         },
         (error) => {
           console.error("Registration failed:", error);
-          this.sharedService.updateModaltext("Something went wrong. Please try again.", false);
+          this.sharedService.userRegistration("Something went wrong. Please try again.", false);
           this.sharedService.openModal(true);
         }
       );

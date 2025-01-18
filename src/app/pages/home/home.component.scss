@@ -1,264 +1,77 @@
 
 $primaryColor : rgb(50 170 160 / var(--tw-text-opacity, 1));
-$backgroundColor :  rgb(14, 23, 43);
-*{
-    scroll-behavior: smooth;
-}
-.about-align{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    position: relative;
-    border-bottom: 1px solid white;
-    .about-component{
-        width: 90%;
-        max-width: 1800px;
-        z-index: 2;
-    }
-    .about-background{
-        width: 100%;
-        height: 100%;
-        background: radial-gradient(50% 100% at 50% 100%, #414670 0, #1d2138 49.9%, #111527 92.29%);
-        position: absolute;
-        z-index: 1;
-    }
-}
-.home-fixed-back{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height:100%;
-    position: fixed;
-    top: 0px;
-    overflow: hidden;
-    .home-fixed-back-img{
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        object-fit: cover;
-    }
-    .find-job-align{
-        width: 90%;
-        display: flex;
-        justify-content: center;
-        .find-job{
-            color: white;
-            font-family: Bold;
-            font-size: 35px;
-            position: sticky;
-            top: 50px;
-            text-shadow: 0px 0px 5px black;
-            z-index: 1;
-            text-align: center;
-        }
-    }
-}   
+$backgroundColor :  rgba(0, 0, 0, 0.914);
 .home{
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 40px;
-    position: relative;
-    background: linear-gradient(180deg, rgba(18, 21, 38, 0) 4.88%, #121526), radial-gradient(100% 206.64% at 100% 0, #464c78 0, #454b77 31.27%, #373d66 46.34%, #2e3259 63.27%, #2b2f54 70.87%, #202446 83.85%, #1e2038 100%);
+    .about-component{
+        width: 100%;
+    }
     .home-align{
         display: flex;
         padding: 50px 0px;
         position: relative;
         gap: 20px;
-        border-radius: 20px;
         width: 90%;
         max-width: 1800px;
-        flex-direction: column;
-        z-index: 1;
-        .center-recruitors{
+        .vacany-align{
             width: 100%;
-            display: flex;
-            justify-content: center;
-            .recruitors{
-                color: white;
-                font-family: bold;
-                font-size: 25px;
-                text-align: center;
-            }
-        }
-        .company-align{
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            border-radius: 10px;
-            padding: 50px 0px;
-            background-color: rgba(27, 25, 25, 0.337);
-            .company-width{
-                grid-template-columns: repeat(3,1fr);
-                display: grid;
-                gap: 20px;
-                width: 90%;
-            }
-            .company{
-                width: 100%;
-            }
-        }
-        .vacancy-component{
-            display: flex;
+            right: 0;
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
             gap: 20px;
+            height: 100%;
+            .index{
+                color: red;
+            }
+            .vacancy-height{
+                height: 100%;
+                .vacancy{
+                    height: 100%;
+                    border-radius: 10px;
+                    transition: 0.3s all ease-in-out;
+                    border-radius: 0px;
+                    background-color: lightcoral;
+                    border-radius: 10px;
+                }
+                .low-price {
+                background-color: #f8d7da;
+                }
+                
+                .medium-price {
+                background-color: #fff3cd;
+                }
+                
+                .high-price {
+                background-color: #d4edda;
+                }
+                
+                .premium-price {
+                background-color: #cce5ff;
+                }
+                  
+                .vacancy:hover{
+                }
+            }
+          
+        }
+    }
+}
+
+@media screen and (max-width:1100px){
+    .home{
+        .home-align{
+            padding: 0px 0px;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
             .vacany-align{
                 width: 100%;
-                display: grid;
-                grid-template-columns: repeat(3,1fr);
-                gap: 20px;
-                height: 100%;
-                .vacancy-height{
-                    height: 100%;
-                    .vacancy{
-                        height: 100%;
-                        background-color: #1d2228;
-                        border-radius: 10px;
-                        transition: 0.3s all ease-in-out;
-                        box-shadow: 0px 0px 5px black;
-                        border: 1px solid grey;
-                    }
-                    .vacancy:hover{
-                        scale: 1.03;
-                        background-color: #1b1b1b;
-                        border: 1px solid white;
-                    }
-                }
-            }
-            .filter-align{
-                width: 28%;
-                position: sticky;
-                background: radial-gradient(100% 1162.31% at 100% 0, #44557e 0, #232d46 100%);
-                background-size: 800% 800%;
-                -webkit-animation: AnimationName 20s ease infinite;
-                -moz-animation: AnimationName 20s ease infinite;
-                animation: AnimationName 20s ease infinite;
-                padding: 20px 0px;
-                top: 70px;
-                border-radius: 10px;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                max-height: 600px;
-                overflow: hidden;
-                .filter-component{
-                    width: 90%;
-                }
-            }
-        }
-       
-            @keyframes AnimationName {
-            0% {
-                background-position: 0% 50%;
-            }
-            
-            50% {
-                background-position: 100% 50%;
-            }
-            
-            100% {
-                background-position: 0% 50%;
-            }
-            }
-    }
-}
-.empty-space{
-    width: 100%;
-    height: 50vh;
-}
-.recruter-align{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    position: relative;
-    .recruiter{
-        z-index: 2;
-        width: 90%;
-    }
-    .about-background{
-        padding: 20px 0px;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(180deg, rgba(18, 21, 38, 0) 4.88%, #121526), radial-gradient(100% 206.64% at 100% 0, #464c78 0, #454b77 31.27%, #373d66 46.34%, #2e3259 63.27%, #2b2f54 70.87%, #202446 83.85%, #1e2038 100%);
-        position: absolute;
-
-
-        z-index: 1;
-    }
-}
-@media screen and (max-width:1500px){
-    .home{
-        .home-align{
-            .vacancy-component{
-                .vacany-align{
-                    grid-template-columns: repeat(2,1fr);
-                }
-            }
-        }
-    }
-}
-
-@media screen and (max-width:1200px){
-
-    .home{
-        .home-align{
-            .vacancy-component{
-                flex-direction: column;
-                align-items: center;
-                .filter-align{
-                    width: 100%;
-                    position: initial;
-                }
-                .vacany-align{
-                    grid-template-columns: repeat(2,1fr);
-                }
-          
-            }
-            .company-align{
-                .company-width{
-                    grid-template-columns: repeat(2,1fr);
-                }
-            }
-        }
-    }
-}
-
-
-@media screen and (max-width:1000px){
-    
-    .home{
-        .home-align{
-            .vacancy-component{
-                .vacany-align{
-                    grid-template-columns: repeat(1,1fr);
-                }
-            }
-        }
-    }
-    .empty-space{
-        height: 35vh;
-    }
-}
-@media screen and (max-width:700px){
- 
-    .home{
-        .home-align{
-            .vacany-align{
                 grid-template-columns: repeat(1,1fr);
             }
-            .company-align{
-                .company-width{
-                    grid-template-columns: repeat(1,1fr);
-                }
-            }
         }
     }
 }
-
-    
-  
-  
-
-  

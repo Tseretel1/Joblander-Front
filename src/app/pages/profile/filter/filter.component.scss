@@ -1,0 +1,95 @@
+.component-align {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .open-filter {
+    display: none;
+    align-items: center;
+    font-family: Bold;
+    font-size: 22px;
+    cursor: pointer;
+    .filter-title {
+      color: white;
+    }
+    .arrow {
+      color: white;
+      transform: rotate(90deg);
+      width: 30px;
+      height: 30px;
+      font-size: 30px;
+      animation: 0.5s arrowoclose;
+    }
+    .arrow-anim {
+      animation: 0.5s arrowopen;
+      transform: rotate(-90deg);
+    }
+    @keyframes arrowopen {
+      0% {
+        transform: rotate(90deg);
+      }
+      100% {
+        transform: rotate(-90deg);
+      }
+    }
+
+    @keyframes arrowoclose {
+      0% {
+        transform: rotate(-90deg);
+      }
+      100% {
+        transform: rotate(90deg);
+      }
+    }
+  }
+  .comp-body {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    .select-align {
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+      align-items: center;
+      width: 100%;
+      .formparenmt {
+        width: 100%;
+        color: white;
+      }
+      .select{
+        color: white;
+        .matoption{
+            color: red;
+            background-color: red;
+        }
+      }
+
+      .select-title {
+        color: white;
+        font-family: Bold;
+        font-size: 20px;
+        margin: 5px;
+      }
+    }
+  }
+  .comp-visible {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .component-align {
+    .comp-body {
+      display: none;
+      flex-wrap: wrap;
+    }
+    .comp-visible {
+      display: flex;
+      flex-direction: row;
+    }
+    .open-filter {
+      display: flex;
+    }
+  }
+}

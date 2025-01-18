@@ -13,28 +13,9 @@ $secondaryColor : rgb(190 255 130 / var(--tw-text-opacity, 1));
   align-items: center;
   transition: 0.3s all ease-in-out;
   border-radius: 10px;
-  animation: 0.5s photoAnim;
   cursor: pointer;
   position: relative;
   height: 100%;
-  .vacancy-img-container{
-    width: 90%;
-    height: 150px;
-    border-radius: 10px;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px 0px;
-
-    .vacancy-img{
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 10px;
-    }
-  }
-  
   .publisher{
     display: flex;
     padding-top: 10px;
@@ -65,18 +46,6 @@ $secondaryColor : rgb(190 255 130 / var(--tw-text-opacity, 1));
         }
     }
 }
-  @keyframes photoAnim {
-        0%{
-            scale: 0.9;
-            opacity: 0;
-        }
-        50%{
-            opacity: 1;
-        }
-        100%{
-            scale: 1;
-        }
-   }
   .card-title{
     display: flex;
     width: 90%;
@@ -84,7 +53,6 @@ $secondaryColor : rgb(190 255 130 / var(--tw-text-opacity, 1));
     align-items: flex-start;
     gap: 8px;
     .title {
-        color: whitesmoke;
         font-family: bold;
         transition: 0.3s all ease-in-out;
         margin: 0;
@@ -93,28 +61,7 @@ $secondaryColor : rgb(190 255 130 / var(--tw-text-opacity, 1));
         margin: 10px 0px;
     }
 }
-  .job-info{
-    width: 90%;
-    .price{
-        color: rgb(174, 171, 171);
-        font-size: 14px;
-    }
-    .description-align{
-        width: 100%;
-        max-height: 100px;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        padding-bottom: 10px;
-        .desc{
-            text-wrap: nowrap  ;
-            color: $primaryColor;
-        }
-        .description{
-            color: rgba(255, 255, 255, 0.616);
-        }
-     }
-  }
+
 }
 .card::-webkit-scrollbar{
     display: none;

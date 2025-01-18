@@ -1,20 +1,18 @@
-import { CommonModule } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { MatIcon } from '@angular/material/icon';
 import { TranslateModule } from '@ngx-translate/core';
-import Aos from 'aos';
+import * as AOS from 'aos';
 @Component({
-  selector: 'app-about',
-  imports: [CommonModule, TranslateModule],
-  templateUrl: './about.component.html',
-  styleUrl: './about.component.scss'
+  selector: 'app-introduction',
+  imports: [TranslateModule],
+  templateUrl: './introduction.component.html',
+  styleUrl: './introduction.component.scss'
 })
-export class AboutComponent implements OnInit, OnDestroy{
-
+export class IntroductionComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
-    Aos.init({
+    AOS.init({
       duration: 1000,      
       easing: 'ease-in-out',
+      once: false           
     });
     this.purposeIMG = this.images[this.currentIndex];
 
@@ -23,7 +21,7 @@ export class AboutComponent implements OnInit, OnDestroy{
     }, 5000); 
   }
   ngOnDestroy(): void {
-    Aos.refreshHard(); 
+    AOS.refreshHard(); 
     if (this.intervalId) {
       clearInterval(this.intervalId);
     }

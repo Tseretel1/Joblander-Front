@@ -9,6 +9,7 @@
         width: 100%;
         height: 100%;
         backdrop-filter: blur(7px);
+        background-color: rgba(0, 0, 0, 0.352);
         position: absolute;
         animation: 0.5s modalFade;
         z-index: 1;
@@ -23,7 +24,6 @@
         align-items: center;
         padding: 30px;
         flex-direction: column;
-        box-shadow: 0px 0px 10px  rgb(31, 31, 71);
         animation:0.5s cardAnim;
         .close-align{
             width: 100%;

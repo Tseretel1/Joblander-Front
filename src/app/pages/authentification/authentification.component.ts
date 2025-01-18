@@ -7,7 +7,8 @@ import { CommonModule } from '@angular/common';
 import { ModalComponent } from '../../shared/components/modal/modal.component';
 import { SharedServiceService } from '../../shared/services/shared-service.service';
 import { Subscription } from 'rxjs';
-
+import { Router } from '@angular/router';
+import { Routes ,appRoutes} from '../../shared/routes';
 @Component({
   selector: 'app-authentification',
   imports: [
@@ -21,12 +22,14 @@ import { Subscription } from 'rxjs';
   styleUrl: './authentification.component.scss',
 })
 export class AuthentificationComponent implements OnInit, OnDestroy, AfterViewChecked{
+  routes: Routes = appRoutes;
 
-  constructor(private sharedService: SharedServiceService){
+  constructor(private sharedService: SharedServiceService, private router:Router){
 
   }
   modalSubscription: Subscription | undefined;
-  modalTextSubscription: Subscription | undefined;
+  modalRegisterSub: Subscription | undefined;
+  modalLoginSub: Subscription | undefined;
 
   ngOnInit(): void {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -36,10 +39,16 @@ export class AuthentificationComponent implements OnInit, OnDestroy, AfterViewCh
       }
     });
 
-    this.modalTextSubscription = this.sharedService.modalText$.subscribe(({ data, userRegistered }) => {
+    this.modalRegisterSub = this.sharedService.modalRegister$.subscribe(({ data, userRegistered }) => {
       this.ModalMessage = data;
       if(userRegistered){
         this.switchAuth();
+      }
+    });
+    this.modalLoginSub = this.sharedService.login$.subscribe(({ data, loggedIn }) => {
+      this.ModalMessage = data;
+      if(loggedIn){
+        this.router.navigate([this.routes.profile]);       
       }
     });
     AOS.init({
@@ -60,17 +69,19 @@ export class AuthentificationComponent implements OnInit, OnDestroy, AfterViewCh
     AOS.refresh();
   }
   
-  switchText = "LOGIN"
-  
+  switchText = "DONTHAVEACCOUNT";
+  switchButtonText = "REGISTER"
   loginVisible: boolean = false;
   switchAuth() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     if (this.loginVisible) {
       this.loginVisible = false;
-      this.switchText = "LOGIN";
+      this.switchButtonText = "REGISTER";
+      this.switchText = "DONTHAVEACCOUNT";
     } else {
       this.loginVisible = true;
-      this.switchText = "REGISTER";
+      this.switchButtonText = "LOGIN";
+      this.switchText = "HAVEACCOUNT";
     }
   }
 
@@ -80,6 +91,7 @@ export class AuthentificationComponent implements OnInit, OnDestroy, AfterViewCh
 
   closeModal() {
     this.modalVisible = false;
+    this.sharedService.openModal(false);
   }
   openModal(){
     this.modalVisible = true;

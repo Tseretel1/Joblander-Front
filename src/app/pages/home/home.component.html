@@ -1,58 +1,19 @@
-<!-- fixed background of componetn -->
-<div class="home-fixed-back">
-  <div class="find-job-align">
-      <p class="find-job">{{"LETSFINDJOB" |translate}}</p>
-  </div>
-    <img src="assets/photos/tryback.gif" alt="" class="home-fixed-back-img">
-</div>
-
-<!-- section about -->
-<section class="about-align" >
-    <div class="about-background"></div>
-    <app-about class="about-component" ></app-about>
-</section>
-
-<!-- main section -->
-<section class="home" id="home">
+ 
+<div class="home">
     <div class="home-align">
-        <div class="center-recruitors">
-          <P class="recruitors"> {{"TOPRECRUITORS"|translate}}</P>
+        <div class="vacany-align">
+            <div *ngFor="let vc of vacanys; trackBy: trackByVacany let index = index">
+                <div [routerLink]="['/apply']" [queryParams]="{vacany: getVacanyData(vc)}" class="vacancy-height">
+                    <app-vacancy-card [vacany]="vc" class="vacancy"
+                    [ngClass]="{
+                        'low-price': vc.price <= 1000,
+                        'medium-price': vc.price > 1000 && vc.price <= 3000,
+                        'high-price': vc.price > 3000 && vc.price <= 5000,
+                        'premium-price': vc.price > 5000
+                      }" 
+                     data-aos="fade-up"></app-vacancy-card>
+                </div>
+            </div>
         </div>
-            <div class="company-align" id="company">
-                <div class="company-width">
-                    @for (c of company; track c;) {
-                      <app-company-card [company]="c" class="company" data-aos="fade-up"></app-company-card>
-                    }
-                  <div *ngFor="let c of company;" data-aos="fade-up">
-                </div>
-              </div>
-            </div>
-
-            <div class="vacancy-component">
-                <div class="filter-align">       
-                  <app-filter class="filter-component"></app-filter>
-                </div>
-              <div class="vacany-align">
-                @for (vc of vacanys; track vc) {
-                  <div [routerLink]="['/apply']" [queryParams]="{vacany: getVacanyData(vc)}" class="vacancy-height">
-                    <app-vacancy-card [vacany]="vc" class="vacancy" data-aos="fade-up"></app-vacancy-card>
-                  </div>
-                }
-              </div>
-            </div>
-      </div>
-</section>
-
-
-<!-- empty space for fixed background to show -->
-<div class="empty-space">
+    </div>
 </div>
-
-
-<!--information for recruiters -->
-<section class="recruter-align">
-  <app-recruiter class="recruiter"></app-recruiter>
-  <div class="about-background"></div>
-</section>
-
-

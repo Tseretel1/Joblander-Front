@@ -1,0 +1,48 @@
+
+ <!-- fixed background of componetn -->
+ <div class="home-fixed-back">
+    <div class="find-job-align">
+        <p class="find-job">{{"LETSFINDJOB" |translate}}</p>
+    </div>
+  </div>
+  
+  <!-- section about -->
+  <section class="about-align" >
+      <div class="about-background"></div>
+      <app-introduction class="introduction-comp"></app-introduction>
+  </section>
+  
+  <!-- main section -->
+  <section class="home" id="home">
+      <div class="home-align">
+          <div class="center-recruitors">
+            <P class="recruitors"> {{"TOPRECRUITORS"|translate}}</P>
+          </div>
+              <div class="company-align" id="company">
+                  <div class="company-width">
+                      @for (c of company; track c;) {
+                        <app-company-card [company]="c" class="company" data-aos="fade-up"></app-company-card>
+                      }
+                    <div *ngFor="let c of company;" data-aos="fade-up">
+                  </div>
+                </div>
+              </div>
+  
+  
+        </div>
+  </section>
+  
+  <!-- empty space for fixed background to show -->
+  <div class="empty-space">
+  </div>
+  
+  
+  <!--information for recruiters -->
+  <section class="recruter-align">
+    <app-recruiter class="recruiter"></app-recruiter>
+    <div class="about-background"></div>
+  </section>
+  
+  
+
+  

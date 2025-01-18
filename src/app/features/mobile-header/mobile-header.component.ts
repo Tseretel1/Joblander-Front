@@ -5,6 +5,8 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import * as AOS from 'aos';
 import { appRoutes,Routes } from '../../shared/routes';
+import { SharedServiceService } from '../../shared/services/shared-service.service';
+import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-mobile-header',
   imports: [CommonModule,TranslateModule,RouterLink,RouterLinkActive],
@@ -13,15 +15,19 @@ import { appRoutes,Routes } from '../../shared/routes';
 })
 export class MobileHeaderComponent  implements OnInit{
   routes: Routes = appRoutes;
-  constructor(private translate: TranslateService){ 
+  constructor(private translate: TranslateService,private sharedService : SharedServiceService){ 
   }
-
+  loginSub: Subscription | undefined;
+  userLogged:boolean = false;
   ngOnInit(): void {
     this.langDetect();
     AOS.init({
       duration: 100,
       easing: 'ease-in-out',
       once: false, 
+    });
+    this.loginSub = this.sharedService.login$.subscribe(({ data, loggedIn }) => {
+      this.userLogged = loggedIn;
     });
   }
 
