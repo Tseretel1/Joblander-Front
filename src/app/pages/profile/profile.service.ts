@@ -10,7 +10,5 @@ export class ProfileService {
   private url = URL;
   
   constructor(private http :HttpClient) { }
-  GetMyProfile(): Observable<any> {
-    return this.http.get(this.url + 'profile');
-  }
+
 }

@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ProfileCardService } from './profile-card.service';
+import { TranslateModule } from '@ngx-translate/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-profile-card',
-  imports: [],
+  imports: [TranslateModule,CommonModule],
   templateUrl: './profile-card.component.html',
   styleUrl: './profile-card.component.scss'
 })

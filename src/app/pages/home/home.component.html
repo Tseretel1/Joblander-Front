@@ -5,13 +5,9 @@
             <app-filter class="filter"></app-filter>
         </div>
         <div class="vacany-align">
-            <div *ngFor="let vc of vacanys; trackBy: trackByVacany let index = index">
-                <div [routerLink]="['/apply']" [queryParams]="{vacany: getVacanyData(vc)}" class="vacancy-height">
-                    <app-vacancy-card [vacany]="vc" class="vacancy"
- 
-                     data-aos="fade-up"></app-vacancy-card>
-                </div>
-            </div>
+            @for (vc of vacanys; track vc) {
+                <app-vacancy-card [vacany]="vc" [routerLink]="['/apply']" [queryParams]="{vacany: getVacanyData(vc)}"  class="vacancy" data-aos="fade-up"></app-vacancy-card>
+            }
         </div>
     </div>
 </div>

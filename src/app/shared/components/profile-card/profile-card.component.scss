@@ -3,81 +3,244 @@ $backgroundclip :linear-gradient(270deg,lightblue ,rgb(50, 170, 160, var(--tw-te
 .sticky-side {
     display: flex;
     flex-direction: column;
-    align-items: center;
     transition: filter 0.3s ease-in-out;
     position: relative;
-    height: 250px;
-    .profile-section {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.289);
+    justify-content: flex-start;
+    border-radius: 10px;
+    gap: 50px;
+    .profile-header{
+        width: 100%;
         display: flex;
-        align-items: center;
-        color: white;
-        position: relative;
-        gap: 25px;
-        z-index: 4;
-        position: absolute;
-        left: 20%;
-        top: 65%;
-        transform: translateY(-65%);
-        transform: translateX(-20%);
-        .profile-img-container {
-            width: 150px;
-            height: 150px;
-            border-radius: 30px;
-            border: 10px solid rgba(255, 255, 255, 0.2);
-            overflow: hidden;
-            display: grid;
+        height: 100%;
+        justify-content: space-between;
+        margin:15px;
+        .background-section{
+            border-radius: 20px;
+            width: 50%;
+            height: 220px;
             transition: 0.3s all ease-in-out;
-            place-items: center;
-
-            .profile-img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
+            backdrop-filter: blur(10px);
+            border: 1px solid gray;
+            position: relative;
+            .profile-section {
+                display: flex;
+                align-items: flex-end;
+                color: white;
+                gap: 25px;
+                z-index: 4;
+                position: absolute;
+                left: 20%;
+                top: 55%;
+                transform: translateY(-55%);
+                transform: translateX(-20%);
+                filter: brightness(1);
+                transition: 0.3s all ease-in-out;
+                .profile-img-container {
+                    width: 150px;
+                    height: 150px;
+                    border-radius: 30px;
+                    border: 10px solid rgba(255, 255, 255, 0.2);
+                    overflow: hidden;
+                    display: grid;
+                    transition: 0.3s all ease-in-out;
+                    place-items: center;
+                    background-color: black;
+                    .profile-img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+        
+                .profile-img-container:hover {
+                    filter: none;
+                }
+        
+                .name-align {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    padding: 20px 0px;
+                    .bio {
+                        background-clip: text;
+                        font-size: 14px;
+                        text-wrap: nowrap;
+                        color: gray;
+                        text-align: center;
+                    }
+        
+                    .username-align {
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        transition: 0.3s all ease-in-out;
+                        .username {
+                            font-family: bold;
+                            font-size: 25px;
+                        }
+                        .username::first-letter {
+                            text-transform: capitalize;
+                        }
+                    }
+                }
             }
         }
-
-        .profile-img-container:hover {
-            filter: none;
-        }
-
-        .name-align {
+        .about-section{
+            color: white;
+            width: 50%;
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
-            max-width: 280px;
-            .bio {
-                font-weight: bold;
-                background-clip: text;
-                font-size: 14px;
-            }
-
-            .username-align {
-                display: flex;
-                align-items: center;
-                gap: 10px;
-                transition: 0.3s all ease-in-out;
-
-                .username {
-                    font-family: bold;
-                    font-size: 25px;
-                }
-
-                .username::first-letter {
-                    text-transform: capitalize;
-                }
-            }
+            align-items: center;
+            display: flex;
+           
+                
         }
     }
-    .background-section{
-        border-radius: 10px;
+    .contact{
         width: 100%;
-        height: 100%;
-        transition: 0.3s all ease-in-out;
-        backdrop-filter: blur(10px);
-        box-shadow: 0px 0px 10px black;
+        padding-top: 30px;
+        .contact-header{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            .contact-title{
+                font-family: Bold;
+                text-align: center;
+                color: $primarycolor;
+                font-size: 23px;
+            } 
+        }
+        .contact-info{
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            gap: 20px;
+            .bio-parent{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                padding: 30px 0px;
+                gap: 30px;
+                .bio-align{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    .bio-title{
+                        .contact-icon{
+                            width: 35px;
+                            padding: 10px;
+                        }
+                        .phone{
+                            width: 45px;
+                        }
+                    }   
+                    .bio-text{
+                        color: white;
+                    } 
+                    .link-text {
+                        color: lightblue;
+                        word-wrap: break-word;
+                        overflow-wrap: break-word; 
+                        white-space: normal; 
+                    }      
+                }
+            }
+            .links-parent {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                padding: 30px 0px;
+                .link-align{
+                    display: flex;
+                    gap: 30px;
+                    align-items: center;
+                    .link {
+                      padding: 50px;
+                      border-radius: 20px;
+                      background-color: rgba(255, 255, 255, 0.11);
+                      width: 50px;
+                      display: flex;
+                      align-items: center;
+                      gap: 10px;
+                      transition: 0.3s all ease-in-out;
+                      border: 2px solid gray;
+                      cursor: pointer;
+                  
+                      .phone {
+                        width: 50px;
+                      }
+                    }
+                }
+                .link-align:hover > .link:not(:hover) {
+                   filter: blur(3px);
+                }
+                .link-align .link:hover {
+                   border: 2px solid white;
+                   transform: scale(1.1, 1.1);
+                   background-color: transparent;
+                }
+              }
+        }
     }
 
 }
-// .sticky-side:hover .background-section{
-//     filter:blur(10px)
-// }
+
+@media screen and (max-width:1100px){
+    .sticky-side{
+        .profile-header{
+            flex-direction: column;
+            margin: 0px;
+            align-items: center;
+            justify-content:initial;
+            gap: 120px;
+            width: 100%;
+            .background-section{
+                width: 100%;
+                margin-top: 20px;
+                width: 95%;
+                padding: 0px;
+                height: 170px;
+                .profile-section{
+                    flex-direction: column;
+                    align-items: center;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    gap: 0px;
+                    .profile-img-container{
+                        width: 100px;
+                        height: 100px;
+                    }
+                    .name-align{
+                        padding:0px;
+                        align-items: center;
+                    }
+                }
+            }
+            .about-section{
+                width: 95%;
+                .bio-align{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:1100px){
+    .sticky-side{
+        .contact{
+            .contact-info{
+                .links-parent{
+                    .link-align{
+                        flex-wrap: wrap;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                }
+            }
+        }
+    }
+}
+
+

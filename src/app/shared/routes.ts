@@ -15,5 +15,5 @@ export const appRoutes: Routes = {
     profile: "/profile",
 };
 
-export const URL: string ="https://192.168.121.1:7191/";
+export const URL: string ="https://192.168.1.10:7191/";
   

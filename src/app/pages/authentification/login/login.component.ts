@@ -5,12 +5,13 @@ import * as AOS from 'aos';
 import { SharedServiceService } from '../../../shared/services/shared-service.service';
 import { LoginService } from './login.service';
 import {User} from './login.service' 
+import { CommonModule } from '@angular/common';
 
 
 
 @Component({
   selector: 'app-login',
-  imports: [ReactiveFormsModule, TranslateModule],
+  imports: [ReactiveFormsModule, TranslateModule,CommonModule],
   styleUrl: './login.component.scss',
   templateUrl: './login.component.html'
 })
@@ -20,8 +21,8 @@ export class LoginComponent {
 
   constructor(private fb :FormBuilder, private sharedService :SharedServiceService,private service:LoginService){
     this.loginForm = this.fb.group({
-      email: ['', Validators.required,],
-      password: ['', Validators.required],
+      email: ['', [Validators.required, Validators.pattern('[^ @]*@[^ @]*')]],
+      password: ['', [Validators.required, Validators.minLength(8)]],
     });
   }
 
@@ -37,7 +38,7 @@ export class LoginComponent {
     });
   }
 
-
+  visiblemodal:boolean = false;
   login(){
     if(this.loginForm.valid){
       const user : User ={
@@ -47,7 +48,11 @@ export class LoginComponent {
       this.service.login(user).subscribe(
         (resp)=>{
           if(resp.success){
-            this.sharedService.userLogin("",true)
+            this.visiblemodal = true;
+            setTimeout(() => {
+              this.visiblemodal = false;
+            }, 1000);
+            this.sharedService.userLogin("",true);
             localStorage.setItem('token', resp.message);
           }
           else{
@@ -56,7 +61,6 @@ export class LoginComponent {
           }
         },
         (error)=>{
-
         }
       )
     }

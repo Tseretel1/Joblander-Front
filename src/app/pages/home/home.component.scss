@@ -38,24 +38,28 @@ $backgroundColor :  rgba(0, 0, 0, 0.914);
             grid-template-columns: repeat(4,1fr);
             gap: 30px;
             height: 100%;
-            .vacancy-height{
+            .vacancy{
                 height: 100%;
-                .vacancy{
-                    height: 100%;
-                    border-radius: 10px;
-                    transition: 0.3s all ease-in-out;
-                    border-radius: 0px;
-                    border-radius: 10px;
-                    color: white;
-                    border: 1px solid grey;
-                    background-color: rgba(0, 0, 0, 0.374);
-                }
-                .vacancy:hover{
-                    background-color: rgba(255, 251, 251, 0.085);
-                    border: 1px solid white;
-                }
+                border-radius: 10px;
+                transition: 0.2s all ease-in-out;
+                border-radius: 0px;
+                border-radius: 10px;
+                border: 1px solid grey;
+                background-color: rgba(0, 0, 0, 0.374);
+            }
+            .vacancy:hover{
+                background-color: transparent;
+                border: 1px solid white;
+                scale: 1.03;
             }
         }
+        // .vacany-align:hover > .vacancy:not(:hover) {
+        //     filter: blur(3px);
+        //     background-color: black;
+        //  }
+        //  .vacany-align .vacancy:hover {
+        //     background-color: rgba(255, 251, 251, 0.085);
+        //  }
     }
 }
 

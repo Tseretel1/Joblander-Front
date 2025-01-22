@@ -1,16 +1,52 @@
-<div class="sticky-side" >
-    <div class="profile-section">
-        <div class="profile-img-container">
-            <img [src]="userProfile.photo" class="profile-img">
-        </div>
-        <div class="name-align">
-            <div class="username-align">
-                <p class="username">{{userProfile.name}} </p>
-                <p class="username">{{userProfile.lastName}} </p>
+<div class="sticky-side">
+    <div class="profile-header">
+        <div class="background-section">
+            <div class="profile-section">
+                <div class="profile-img-container">
+                    <img [src]="userProfile.photo" *ngIf="userProfile.photo" class="profile-img">
+                    <img src="/assets/photos/user.png" *ngIf="userProfile.photo == ''" class="profile-img">
+                </div>
+                <div class="name-align">
+                    <div class="username-align">
+                        <p class="username">{{userProfile.name}} </p>
+                        <p class="username">{{userProfile.lastName}} </p>
+                    </div>
+                    <p class="bio">{{userProfile.bio}} </p>
+                </div>
             </div>
-            <p class="bio">{{userProfile.bio}} </p>
-        </div>
+      </div>
     </div>
-    <div class="background-section">
+    <div class="about-section">
+
+    </div>
+    <div class="contact">
+        <div class="contact-header">
+            <p class="contact-title">{{"CONTACTME"|translate}}</p>
+        </div>
+        <div class="contact-info">
+            <div class="bio-parent">
+                <div class="bio-align">
+                    <div class="bio-title"><img src="/assets/icons/gmail.png" class="contact-icon" alt=""></div>
+                    <p class="bio-text"> {{userProfile.email}} </p>
+                </div>
+                <div class="bio-align">
+                    <div class="bio-title"><img src="/assets/icons/phone.png" class="phone" alt=""></div>
+                    <p class="bio-text"> {{userProfile.phoneNumber}} </p>
+                </div>
+            </div>
+            <div class="links-parent">
+                <div class="link-align">
+                    <a [href]="userProfile.facebook" target="_blank" class="link" *ngIf="userProfile.facebook">
+                        <div class="bio-title"><img src="/assets/icons/facebook.png" class="phone" alt=""></div>
+                    </a>
+                    <a [href]="userProfile.linkedin" target="_blank" class="link" *ngIf="userProfile.linkedin">
+                        <div class="bio-title"><img src="/assets/icons/linkedin.png" class="phone" alt=""></div>
+                    </a>
+                    <a [href]="userProfile.github" target="_blank" class="link" *ngIf="userProfile.github">
+                        <div class="bio-title"><img src="/assets/icons/github.png" class="phone" alt=""></div>
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

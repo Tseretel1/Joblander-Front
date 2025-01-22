@@ -12,13 +12,13 @@ $primaryColor : rgb(50 170 160 / var(--tw-text-opacity, 1));
         gap: 20px;
         width: 100%;
         padding: 30px;
-
         .card-title{
             font-family: Bold;
             font-size: 20px;
             color: white;
         }
           .card-form{
+            width: 100%;
           .form-align{
               display: flex;
               flex-direction: column;
@@ -26,14 +26,35 @@ $primaryColor : rgb(50 170 160 / var(--tw-text-opacity, 1));
               .form-group-h{
                   display: flex;
                   align-items: center;
-                  gap: 20px;
+                  gap: 30px;
+                  width: 100%;
+                  position: relative;
+                  .span-align{
+                    height: 20px;
+                    .validation-message{
+                      color: red;
+                      bottom: 20px;
+                      left: 0px;
+                      font-size: 14px;
+                    }
+                  }
               }
               .form-group-v{
+                  gap: 30px;
                   width: 100%; 
                   display: flex;
                   flex-direction: column;
-                  gap: 20px;            
                   padding: 20px 0px;   
+                  position: relative;
+                  .span-align{
+                    height: 20px;
+                    .validation-message{
+                      color: red;
+                      bottom: 20px;
+                      left: 0px;
+                      font-size: 14px;
+                    }
+                  }
               }
               .form-group {
                   position: relative;
@@ -132,7 +153,6 @@ $primaryColor : rgb(50 170 160 / var(--tw-text-opacity, 1));
         .form-align{
             .form-group-h{
               flex-direction: column;
-              gap: 40px;
               width: 100%;
             }
             .form-group-v{

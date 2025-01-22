@@ -24,6 +24,7 @@ export class HeaderComponent implements OnInit{
       this.isUserLogged();
     });
     this.isUserLogged();
+    this.langDetect();
   }
 
   isUserLogged(){
@@ -36,13 +37,12 @@ export class HeaderComponent implements OnInit{
     }
   }
   langDetect(){
-
     const lang = localStorage.getItem('lang');
     if(lang == 'geo'){
       this.lang = true;
     }
     else{
-      this.lang = false
+      this.lang = false;
     }
   }
 
@@ -57,7 +57,4 @@ export class HeaderComponent implements OnInit{
     this.lang = true;
     localStorage.setItem('lang', 'geo');
   }
-
-
-
 }

@@ -9,10 +9,11 @@ import { TranslateModule } from '@ngx-translate/core';
 import * as AOS from 'aos';
 import { RegisterService, User } from './register.service';
 import { SharedServiceService } from '../../../shared/services/shared-service.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-registration',
-  imports: [TranslateModule, ReactiveFormsModule],
+  imports: [TranslateModule, ReactiveFormsModule, CommonModule],
   styleUrl: './registration.component.scss',
   templateUrl: './registration.component.html',
 })
@@ -25,7 +26,7 @@ export class RegistrationComponent
     this.registerForm = this.fb.group({
       Name: ['', [Validators.required, Validators.maxLength(20)]],
       lastName: ['', [Validators.required, Validators.maxLength(20)]],
-      Email: ['', Validators.required,],
+      email: ['', [Validators.required, Validators.pattern('[^ @]*@[^ @]*')]],
       password: ['', [Validators.required, Validators.minLength(8)]],
       phoneNumber: ['', [Validators.required, Validators.maxLength(20)]],
     });
@@ -56,10 +57,11 @@ export class RegistrationComponent
       const userObj : User ={
         name: this.registerForm.value.Name,
         lastName: this.registerForm.value.lastName,
-        email: this.registerForm.value.Email,
+        email: this.registerForm.value.email,
         phoneNumber: this.registerForm.value.phoneNumber,
         password: this.registerForm.value.password,
       }  
+      console.log(userObj);
       this.service.registration(userObj).subscribe(
         (resp) => {
           if (resp.success) {

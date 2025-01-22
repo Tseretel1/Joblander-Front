@@ -8,28 +8,55 @@
                         <input type="text"  class="form-field"  formControlName="Name" maxlength="20" required="phone is recruiteruier"/>
                         <label for="name" class="form-label">
                             {{"NAME" | translate}}</label>
+                        <div class="span-align">
+                            <span  *ngIf="registerForm.controls['Name']?.errors && (registerForm.controls['Name']?.touched || registerForm.controls['Name']?.dirty)" class="validation-message"> {{"NAME" | translate}}{{"REQUIRED" | translate}}</span>
+                        </div>
                     </div>
                     <div class="form-group">
                         <input type="text"  class="form-field"  formControlName="lastName" maxlength="20" />
                         <label for="name" class="form-label">
                             {{"LASTNAME" | translate}}</label>
+                        <div class="span-align">
+                            <span  *ngIf="registerForm.controls['lastName']?.errors && (registerForm.controls['lastName']?.touched || registerForm.controls['lastName']?.dirty)" class="validation-message"> {{"LASTNAME" | translate}}{{"REQUIRED" | translate}}</span>
+                        </div>
                     </div>
                 </div>
                 <div class="form-group-v">
                     <div class="form-group">
-                        <input type="email"  class="form-field"  formControlName="Email" maxlength="20" />
+                        <input type="email"  class="form-field"  formControlName="email"/>
                         <label for="name" class="form-label">
                             {{"GMAIL" | translate}}</label>
-                    </div>
+                            <div class="span-align">
+                                <span 
+                                  *ngIf="registerForm.controls['email']?.errors?.['pattern'] && registerForm.controls['email']?.dirty" 
+                                  class="validation-message">
+                                  {{"YOUFORGOT" | translate}}
+                                </span>
+                              
+                                <span 
+                                  *ngIf="registerForm.controls['email']?.errors?.['required'] && registerForm.controls['email']?.touched" 
+                                  class="validation-message">
+                                  {{"GMAIL" | translate}}{{"REQUIRED" | translate}}
+                                </span>
+                              </div>
+                              
+                    </div>                                
                     <div class="form-group">
-                        <input type="password"  class="form-field"  formControlName="password" maxlength="20" />
+                        <input type="password"  class="form-field"  formControlName="password" maxlength="30" />
                         <label for="name" class="form-label">
                             {{"PASSWORD" | translate}}</label>
+                        <div class="span-align">
+                            <span *ngIf="registerForm.controls['password']?.errors?.['minlength'] " class="validation-message"> {{"MUSTCONTAIN" | translate}}</span>
+                        </div>
                     </div>
                     <div class="form-group">
                         <input type="text"  class="form-field"  formControlName="phoneNumber" maxlength="20" />
                         <label for="name" class="form-label">
                             {{"PHONENUMBER" | translate}}</label>
+                        <div class="span-align">
+                            <span  *ngIf="registerForm.controls['phoneNumber']?.errors && (registerForm.controls['phoneNumber']?.touched || registerForm.controls['phoneNumber']?.dirty)" class="validation-message"> {{"PHONENUMBER" | translate}}{{"REQUIRED" | translate}}</span>
+                        </div>
+
                     </div>
                 </div>
                 <button class="submit-button" (click)="register()">{{"SUBMIT"|translate}} </button> 

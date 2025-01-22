@@ -75,6 +75,11 @@
     "PASSWORD" : "Password",
     "PHONENUMBER" : "Phone number",
     "PHOTO" : "Photo",
+    "YOUFORGOT" : "You forgot @",
+    "REQUIRED" : "is required",
+    "MUSTCONTAIN" : "must contain minimum of 8 symbols",
+    "CONTACTME" : "Contact me",
+
 
 
     "WHATISJOBLANDER" : "What is a job lander?",

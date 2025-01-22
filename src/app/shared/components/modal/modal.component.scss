@@ -5,6 +5,7 @@
     justify-content: center;
     align-items: center;
     position: relative;
+    position: fixed;
     .modal-background{
         width: 100%;
         height: 100%;
@@ -14,80 +15,85 @@
         animation: 0.5s modalFade;
         z-index: 1;
     }
-    .modal{
-        width: 100%;
-        max-width: 600px;
-        border-radius: 20px;
-        background-color: rgb(31, 31, 71);
-        z-index: 2;
+    .modal-align{
+        width: 90%;
         display: flex;
-        align-items: center;
-        padding: 30px;
-        flex-direction: column;
-        animation:0.5s cardAnim;
-        .close-align{
-            width: 100%;
-            display: flex;
-            justify-content: flex-end;
-            .x-button {
-                width: 30px;
-                height: 30px;
-                border: none;
-                cursor: pointer;
-                position: relative;
-                background-color: transparent;
-                overflow: visible;
-                }
-                .x-button::before {
-                content: "";
-                position: absolute;
-                width: 28px;
-                height: 4px;
-                background-color: red;
-                animation: 1s CloseBefore;
-                top: 10px;
-                transform: translate(-50%, -50%) rotate(135deg);
-                }
-                
-                .x-button::after {
-                content: "";
-                position: absolute;
-                width: 28px;
-                height: 4px;
-                background-color: red;
-                top: 10px;
-                transform: translate(-50%, -50%) rotate(-135deg); 
-                animation: 1s CloseAfter;
-                }
-                @keyframes CloseAfter {
-                0% {
-                    transform: translate(-50%, -50%) rotate(0deg); 
-                }
-                100% {
-                    transform: translate(-50%, -50%) rotate(-135deg); 
-                }
-                }
-                
-                @keyframes CloseBefore {
-                0% {
-                    transform: translate(-50%, -50%) rotate(0deg); 
-                }
-                100% {
-                    transform: translate(-50%, -50%) rotate(135deg);
-                }
-            }
-        }
-        .message-align{
-            height: 100%;
+        justify-content: center;
+        .modal{
             width: 90%;
+            max-width: 600px;
+            border-radius: 20px;
+            background-color: rgb(31, 31, 71);
+            z-index: 2;
             display: flex;
             align-items: center;
-            justify-content: center;
-        }
-        .message{
-            color: white;
-            font-size: 20px;
             padding: 30px;
+            flex-direction: column;
+            animation:0.5s cardAnim;
+            .close-align{
+                width: 100%;
+                display: flex;
+                justify-content: flex-end;
+                .x-button {
+                    width: 30px;
+                    height: 30px;
+                    border: none;
+                    cursor: pointer;
+                    position: relative;
+                    background-color: transparent;
+                    overflow: visible;
+                    }
+                    .x-button::before {
+                    content: "";
+                    position: absolute;
+                    width: 28px;
+                    height: 4px;
+                    background-color: red;
+                    animation: 1s CloseBefore;
+                    top: 10px;
+                    transform: translate(-50%, -50%) rotate(135deg);
+                    }
+                    
+                    .x-button::after {
+                    content: "";
+                    position: absolute;
+                    width: 28px;
+                    height: 4px;
+                    background-color: red;
+                    top: 10px;
+                    transform: translate(-50%, -50%) rotate(-135deg); 
+                    animation: 1s CloseAfter;
+                    }
+                    @keyframes CloseAfter {
+                    0% {
+                        transform: translate(-50%, -50%) rotate(0deg); 
+                    }
+                    100% {
+                        transform: translate(-50%, -50%) rotate(-135deg); 
+                    }
+                    }
+                    
+                    @keyframes CloseBefore {
+                    0% {
+                        transform: translate(-50%, -50%) rotate(0deg); 
+                    }
+                    100% {
+                        transform: translate(-50%, -50%) rotate(135deg);
+                    }
+                }
+            }
+            .message-align{
+                height: 100%;
+                width: 90%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .message{
+                color: white;
+                font-size: 20px;
+                padding: 30px;
+            }
         }
     }
 }
@@ -111,5 +117,19 @@
     }
     100%{
         scale: 1;
+    }
+}
+
+@media screen and (max-width:1000px){
+    .center-modal{
+        .modal-align{
+            .modal{
+                padding: 10px;
+                .message{
+                    padding: 20px 0px;
+                    font-size: 16px;
+                }
+            }
+        }
     }
 }

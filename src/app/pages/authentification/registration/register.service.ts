@@ -12,8 +12,8 @@ export class RegisterService {
   constructor(private http :HttpClient) 
   { }
   
-  registration(reg: User): Observable<any> {
-    return this.http.post(this.url + 'registration', reg, {
+  registration(user: User): Observable<any> {
+    return this.http.post(this.url + 'registration', user, {
       headers: { 'Content-Type': 'application/json' },
     });
   }

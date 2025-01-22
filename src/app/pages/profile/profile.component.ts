@@ -1,8 +1,12 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ProfileService } from './profile.service';
 import * as AOS from 'aos';
-import { TranslateCompiler, TranslateModule } from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { ProfileCardComponent } from "../../shared/components/profile-card/profile-card.component";
+import { appRoutes, Routes } from '../../shared/routes';
+import { Router } from '@angular/router';
+import { routes } from '../../app.routes';
+import { SharedServiceService } from '../../shared/services/shared-service.service';
+
 @Component({
   selector: 'app-profile',
   imports: [TranslateModule, ProfileCardComponent],
@@ -10,31 +14,21 @@ import { ProfileCardComponent } from "../../shared/components/profile-card/profi
   styleUrl: './profile.component.scss'
 })
 export class ProfileComponent implements OnInit,OnDestroy{
+  constructor(private router: Router,private sharedService :SharedServiceService){
+  }
   ngOnInit(): void {
-    this.getProfile();
     AOS.init({
       duration: 500,      
       easing: 'ease-in-out',
     });
   }
-
   ngOnDestroy(): void {
     AOS.refreshHard(); 
   }
-  constructor(private service : ProfileService){
-
+  routes: Routes = appRoutes;
+  exit(){
+    localStorage.removeItem('token');
+    this.sharedService.userLogin("",false);
+    this.router.navigate([this.routes.auth])
   }
-
-  userProfile : any= {};
-  getProfile(){
-    this.service.GetMyProfile().subscribe(
-      (resp)=>{
-        if(resp.success){
-          this.userProfile= resp.obj;
-        }
-      }
-    )
-  }
-
-  
 }

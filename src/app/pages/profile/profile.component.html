@@ -1,17 +1,10 @@
 <div class="center-component">
     <div class="component-align">
+        <div class="exit-align">
+            <button class="exit-button" (click)="exit()">Exit </button>
+        </div>
         <div class="profile-side">
             <app-profile-card></app-profile-card>
-        </div>
-        <div class="scrolable-side">
-            <div class="bio-align">
-                <p class="bio-title">{{"ABOUTME"|translate}} :</p>
-                <p class="bio-text">{{userProfile.aboutMe}} </p>
-            </div>
-            <div class="bio-align">
-                <p class="bio-title">{{"EDUCATION"|translate}} :</p>
-                <p class="bio-text">{{userProfile.education}} </p>
-            </div>
         </div>
     </div>
 </div>
