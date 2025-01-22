@@ -46,7 +46,6 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    flex-direction: column;
     .select-align {
       display: flex;
       flex-direction: column;
@@ -58,11 +57,10 @@
         color: white;
       }
       .select{
-        color: white;
-        .matoption{
-            color: red;
-            background-color: red;
-        }
+        padding: 10px;
+        border-radius: 10px;
+        font-family: semibold;
+        width: 100%;
       }
 
       .select-title {
@@ -70,19 +68,15 @@
         font-family: Bold;
         font-size: 20px;
         margin: 5px;
+        text-shadow:0px 0px 3px white;
       }
     }
-  }
-  .comp-visible {
-    display: flex;
-    flex-direction: column;
   }
 }
 @media screen and (max-width: 1200px) {
   .component-align {
     .comp-body {
       display: none;
-      flex-wrap: wrap;
     }
     .comp-visible {
       display: flex;
@@ -90,6 +84,16 @@
     }
     .open-filter {
       display: flex;
+    }
+  }
+}
+@media screen and (max-width: 900px) {
+  .component-align {
+    .comp-body {
+      flex-direction: column;
+      .select-align{
+        padding:0px;
+      }
     }
   }
 }

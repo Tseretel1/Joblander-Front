@@ -1,4 +1,3 @@
-$backgroundColor :  rgba(0, 0, 0, 0.914);
 html,body{
     width: 100%;
     padding: 0;
@@ -11,7 +10,7 @@ html,body{
 }
 .back{
     background-image: url('/assets/photos/backgrounddots.webp');
-    background-color: $backgroundColor;
+    background-color: rgb(19, 24, 34);
     width: 100%;
     height: 100%;
     position: fixed;

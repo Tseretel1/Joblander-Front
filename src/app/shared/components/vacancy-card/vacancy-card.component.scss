@@ -16,55 +16,108 @@ $secondaryColor : rgb(190 255 130 / var(--tw-text-opacity, 1));
   cursor: pointer;
   position: relative;
   height: 100%;
-  .publisher{
+  justify-content: space-between;
+  .card-header{
     display: flex;
-    padding-top: 10px;
-    gap: 8px;
-    align-items: center;
-    padding-bottom: 10px;
-    position: absolute;
-    top: -15px;
-    right: -5px;
-    .publisher-name{
-        color: $primaryColor;
-        margin: 0;
-        text-align: center;
-    }
-    .publisher-img-container{
-        width: 35px;
-        height: 35px;
-        border-radius: 50%;
-        border: 1px solid white;
+    justify-content: space-between;
+    width: 90%;
+    flex-direction: column;
+    gap: 40px;
+    padding: 15px 0px;
+    .location-align{
         display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-        .publisher-img{
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        width: 100%;
+        justify-content: space-between;
+        .location{
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 10px 0px;
+            color: rgb(176, 176, 176);
+            .location-icon{
+                width: 20px;
+           }
+        }
+        .publisher{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 5px;
+            .publisher-name{
+                margin: 0;
+                text-align: center;
+                text-wrap: nowrap;
+            }
+            .publisher-img-container{
+                width: 40px;
+                height: 40px;
+                border-radius:50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                overflow: hidden;
+                border: 1px solid white;
+                .publisher-img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+    
+        }
+   }
+    .card-title{
+        display: flex;
+        width: 100%;
+        justify-content:center;
+        .title {
+            font-family: bold;
+            text-align: center;
+            transition: 0.3s all ease-in-out;
+            margin: 0;
+            border-radius: 5px;
+            text-shadow: 0px 0px 5px black;
+            color: rgb(255, 255, 255);
+            font-size: 20px;
+        }
+        .title::first-letter {
+            color: rgb(240, 204, 204);
+            text-transform: capitalize;
         }
     }
-}
-  .card-title{
+  }
+  .card-body{
     display: flex;
     width: 90%;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 8px;
-    .title {
-        font-family: bold;
-        transition: 0.3s all ease-in-out;
-        margin: 0;
-        padding: 2px;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 10px 0px;
+    .price{
+        font-family: Bold;
+        padding: 5px;
         border-radius: 5px;
-        margin: 10px 0px;
+        background-color: rgba(0, 0, 0, 0.129);
+        display: flex;
+        align-items: center;
+        text-shadow: 0px 0px 2px black;
+        font-size: 14px;
     }
-}
-
-}
-.card::-webkit-scrollbar{
-    display: none;
+    .low-price {
+        background-color: #ff000036;
+    }
+    
+    .medium-price {
+        background-color: #ff77003f; 
+    }
+    
+    .high-price {
+        background-color: #fbff023b;
+    }
+    
+    .premium-price {
+        background-color: #00ff0030; 
+    }
+  }
 }
 
 @media screen and (max-width: 800px) {
@@ -77,16 +130,4 @@ $secondaryColor : rgb(190 255 130 / var(--tw-text-opacity, 1));
     }
 }
 @media screen and (max-width: 700px) {
-    .card{
-        .description-align{
-            flex-direction: column;
-            gap: 0px;
-            padding: 5px;
-            align-items: flex-start;
-            justify-content: flex-star;
-            .description{
-                margin: 0;
-            }
-        }
-    }
 }

@@ -4,9 +4,9 @@
             <div class="nav-align">
                 <div class="nav-link" routerLinkActive="active-link"[routerLink]="routes.home"><img src="assets/icons/home.png" alt="" class="nav-icon"> {{"HOME"|translate}}</div>
                 <div class="nav-link"  routerLinkActive="active-link"[routerLink]="routes.publish" ><img src="assets/icons/publish.png" alt=""class="nav-icon">{{"PUBLISH"|translate}}</div>
+                <div class="nav-link"routerLinkActive="active-link"[routerLink]="routes.about">{{"ABOUTUS"|translate}}</div>
                 <div class="nav-link" routerLinkActive="active-link"[routerLink]="routes.auth" *ngIf="!userLogged"><img src="assets/icons/signin.png" alt=""class="nav-icon">{{"LOGIN"|translate}}</div>
                 <div class="nav-link" routerLinkActive="active-link"[routerLink]="routes.profile" *ngIf="userLogged"><img src="assets/icons/profile.png" alt=""class="nav-icon">{{"PROFILE"|translate}}</div>
-                <div class="nav-link"routerLinkActive="active-link"[routerLink]="routes.about">{{"ABOUTUS"|translate}}</div>
             </div>
             <div class="header-title">
                 <img src="assets/icons/jobs2.png" alt="" class="suitcase">

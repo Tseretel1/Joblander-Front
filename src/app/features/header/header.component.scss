@@ -10,7 +10,7 @@ $primaryColor : rgb(50 170 160 / var(--tw-text-opacity, 1));
         display: flex;
         justify-content: center;
         backdrop-filter: blur(10px);
-        background-color: rgba(0, 0, 0, 0.493);
+        background-color: rgba(0, 0, 0, 0.849);
         .header-align {
             display: flex;
             justify-content: space-between;
@@ -61,8 +61,7 @@ $primaryColor : rgb(50 170 160 / var(--tw-text-opacity, 1));
                     cursor: pointer;
                     transition: 0.3s all ease-in-out;
                     margin: 0;
-                    padding: 8px;
-                    padding-bottom: 5px;
+                    padding: 8px 16px;
                     border-bottom: 2px solid transparent;
                     display: flex;
                     align-items: center;
@@ -72,7 +71,6 @@ $primaryColor : rgb(50 170 160 / var(--tw-text-opacity, 1));
                 }
                 .active-link{
                     text-shadow: 0px 0px 2px white;
-                    padding: 8px 16px;
                     border-bottom: 2px solid white;
                 }
                 @keyframes activelinkAnimation {

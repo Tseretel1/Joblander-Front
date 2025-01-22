@@ -4,59 +4,53 @@
         <mat-icon class="arrow" [ngClass]="{'arrow-anim':filtersvisible}">keyboard_arrow_right</mat-icon>
     </div>
     <div class="comp-body" [ngClass]="{'comp-visible':filtersvisible}">
-        <div class="select-align" data-aos="fade-right">
+        <div class="select-align" data-aos="fade-down">
             <p class="select-title">{{"CATEGORIES" | translate}}</p>
-            <mat-form-field class="formparenmt">
-              <mat-select  class="select">
-                <mat-option value="1" class="matoption">{{"ALLCATEGORIES" | translate}}</mat-option>
-                <mat-option value="1" >{{"IT" | translate}}</mat-option>
-                <mat-option value="1" >{{"ADMINANDMANAGEMENT" | translate}}</mat-option>
-                <mat-option value="1" >{{"FINANCES" | translate}}</mat-option>
-                <mat-option value="1" >{{"SALES" | translate}}</mat-option>
-                <mat-option value="1" >{{"TRANSPORTANDDIST" | translate}}</mat-option>
-                <mat-option value="1" >{{"CLEANING" | translate}}</mat-option>
-                <mat-option value="1" >{{"EDUCATION" | translate}}</mat-option>
-                <mat-option value="1" >{{"LAW" | translate}}</mat-option>
-                <mat-option value="1" >{{"MEDICINE" | translate}}</mat-option>
-                <mat-option value="2">{{"GASTRONOMYCUISINE" | translate}}</mat-option>
-                <mat-option value="3">{{"OTHER" | translate}}</mat-option>
-              </mat-select>
-            </mat-form-field>
+              <select class="select">
+                <option value="1" class="matoption">{{"ALLCATEGORIES" | translate}}</option>
+                <option value="1" >{{"IT" | translate}}</option>
+                <option value="1" >{{"ADMINANDMANAGEMENT" | translate}}</option>
+                <option value="1" >{{"FINANCES" | translate}}</option>
+                <option value="1" >{{"SALES" | translate}}<option>
+                <option value="1" >{{"TRANSPORTANDDIST" | translate}}</option>
+                <option value="1" >{{"CLEANING" | translate}}</option>
+                <option value="1" >{{"EDUCATION" | translate}}</option>
+                <option value="1" >{{"LAW" | translate}}</option>
+                <option value="1" >{{"MEDICINE" | translate}}</option>
+                <option value="1">{{"GASTRONOMYCUISINE" | translate}}</option>
+                <option value="1">{{"OTHER" | translate}}</option>
+              </select>
         </div>
 
-        <div class="select-align" data-aos="fade-left">
+        <div class="select-align" data-aos="fade-up">
             <p class="select-title">{{"UPLOADDATE" | translate}}</p>
-            <mat-form-field class="formparenmt">
-              <mat-select>
-                <mat-option value="1" >{{"TODAY" | translate}}</mat-option>
-                <mat-option value="2">{{"LASTTHREEDAYS" | translate}}</mat-option>
-                <mat-option value="3">{{"LASTWEEK" | translate}}</mat-option>
-                <mat-option value="4">{{"LASTTWOWEEK" | translate}}</mat-option>
-              </mat-select>
-            </mat-form-field>
+            <select class="select">
+              <option value="1" >{{"TODAY" | translate}}</option>
+              <option value="2">{{"LASTTHREEDAYS" | translate}}</option>
+              <option value="3">{{"LASTWEEK" | translate}}</option>
+              <option value="4">{{"LASTTWOWEEK" | translate}}</option>
+            </select>
         </div>
     
-        <div class="select-align" data-aos="fade-right"> 
+        <div class="select-align" data-aos="fade-down"> 
             <p class="select-title">{{"LOCATION" | translate}}</p>
-            <mat-form-field class="formparenmt">
-            <mat-select>
-                <mat-option value="1" >{{"TBILISI" | translate}}</mat-option>
-                <mat-option value="2">{{"BATUMI" | translate}}</mat-option>
-                <mat-option value="3">{{"KUTAISI" | translate}}</mat-option>
-                <mat-option value="4">{{"KAKHETI" | translate}}</mat-option>
-                <mat-option value="4">{{"ADJARA" | translate}}</mat-option>
-                <mat-option value="4">{{"ABKHAZETI" | translate}}</mat-option>
-                <mat-option value="4">{{"GURIA" | translate}}</mat-option>
-                <mat-option value="4">{{"IMERETI" | translate}}</mat-option>
-                <mat-option value="4">{{"KVEMOKARTLI" | translate}}</mat-option>
-                <mat-option value="4">{{"MTSKHETAMTIANETI" | translate}}</mat-option>
-                <mat-option value="4">{{"LECHKHUMI" | translate}}</mat-option>
-                <mat-option value="4">{{"SVANETI" | translate}}</mat-option>
-                <mat-option value="4">{{"SAMEGRELO" | translate}}</mat-option>
-                <mat-option value="4">{{"SAMTSKHEJAVAKHETI" | translate}}</mat-option>
-                <mat-option value="4">{{"SHIDAKARTLI" | translate}}</mat-option>
-            </mat-select>
-            </mat-form-field>
+            <select class="select"> 
+                <option value="1" >{{"TBILISI" | translate}}<option>
+                <option value="2">{{"BATUMI" | translate}}<option>
+                <option value="3">{{"KUTAISI" | translate}}<option>
+                <option value="4">{{"KAKHETI" | translate}}<option>
+                <option value="5">{{"ADJARA" | translate}}<option>
+                <option value="6">{{"ABKHAZETI" | translate}}<option>
+                <option value="7">{{"GURIA" | translate}}<option>
+                <option value="8">{{"IMERETI" | translate}}<option>
+                <option value="9">{{"KVEMOKARTLI" | translate}}<option>
+                <option value="10">{{"MTSKHETAMTIANETI" | translate}}<option>
+                <option value="11">{{"LECHKHUMI" | translate}}<option>
+                <option value="12">{{"SVANETI" | translate}}<option>
+                <option value="13">{{"SAMEGRELO" | translate}}</option>
+                <option value="14">{{"SAMTSKHEJAVAKHETI" | translate}}</option>
+                <option value="15">{{"SHIDAKARTLI" | translate}}<option>
+            </select>
         </div>
     </div>
 </div>

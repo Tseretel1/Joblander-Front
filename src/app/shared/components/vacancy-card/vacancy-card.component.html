@@ -1,11 +1,28 @@
 
 <div class="card">
-    <div class="publisher">
-        <div class="publisher-img-container">
-            <img [src]="vacany.publisherPhoto" class="publisher-img" alt="">
+    <div class="card-header">
+        <div class="location-align">
+            <div class="publisher">
+                <div class="publisher-img-container">
+                    <img [src]="vacany.publisherPhoto" class="publisher-img" alt="">
+                </div>
+                <div class="job-info">
+                    {{vacany.publisherName}}
+                </div>
+            </div> 
+            <p class="location"><img src="assets/icons/location.png" alt="" class="location-icon"> {{vacany.location}}</p>
+        </div> 
+        <div class="card-title">
+            <p class="title">{{vacany.title}}</p>
         </div>
     </div>
-    <div class="card-title">
-        <p class="title">{{vacany.title}}</p>
+    <div class="card-body">
+    
+        <p class="price"[ngClass]="{
+            'low-price': vacany.price <= 1000,
+            'medium-price': vacany.price > 1000 && vacany.price <= 3000,
+            'high-price': vacany.price > 3000 && vacany.price <= 5000,
+            'premium-price': vacany.price > 5000
+          }" >{{vacany.price}}₾</p>
     </div>
 </div>

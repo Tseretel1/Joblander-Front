@@ -1,16 +1,14 @@
  
 <div class="home">
     <div class="home-align">
+        <div class="filter-align">
+            <app-filter class="filter"></app-filter>
+        </div>
         <div class="vacany-align">
             <div *ngFor="let vc of vacanys; trackBy: trackByVacany let index = index">
                 <div [routerLink]="['/apply']" [queryParams]="{vacany: getVacanyData(vc)}" class="vacancy-height">
                     <app-vacancy-card [vacany]="vc" class="vacancy"
-                    [ngClass]="{
-                        'low-price': vc.price <= 1000,
-                        'medium-price': vc.price > 1000 && vc.price <= 3000,
-                        'high-price': vc.price > 3000 && vc.price <= 5000,
-                        'premium-price': vc.price > 5000
-                      }" 
+ 
                      data-aos="fade-up"></app-vacancy-card>
                 </div>
             </div>

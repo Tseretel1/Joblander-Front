@@ -1,0 +1,83 @@
+$primarycolor : rgb(50, 170, 160, var(--tw-text-opacity, 1));
+$backgroundclip :linear-gradient(270deg,lightblue ,rgb(50, 170, 160, var(--tw-text-opacity, 1)), green);
+.sticky-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: filter 0.3s ease-in-out;
+    position: relative;
+    height: 250px;
+    .profile-section {
+        display: flex;
+        align-items: center;
+        color: white;
+        position: relative;
+        gap: 25px;
+        z-index: 4;
+        position: absolute;
+        left: 20%;
+        top: 65%;
+        transform: translateY(-65%);
+        transform: translateX(-20%);
+        .profile-img-container {
+            width: 150px;
+            height: 150px;
+            border-radius: 30px;
+            border: 10px solid rgba(255, 255, 255, 0.2);
+            overflow: hidden;
+            display: grid;
+            transition: 0.3s all ease-in-out;
+            place-items: center;
+
+            .profile-img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .profile-img-container:hover {
+            filter: none;
+        }
+
+        .name-align {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            max-width: 280px;
+            .bio {
+                font-weight: bold;
+                background-clip: text;
+                font-size: 14px;
+            }
+
+            .username-align {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                transition: 0.3s all ease-in-out;
+
+                .username {
+                    font-family: bold;
+                    font-size: 25px;
+                }
+
+                .username::first-letter {
+                    text-transform: capitalize;
+                }
+            }
+        }
+    }
+    .background-section{
+        border-radius: 10px;
+        width: 100%;
+        height: 100%;
+        transition: 0.3s all ease-in-out;
+        backdrop-filter: blur(10px);
+        box-shadow: 0px 0px 10px black;
+    }
+
+}
+// .sticky-side:hover .background-section{
+//     filter:blur(10px)
+// }

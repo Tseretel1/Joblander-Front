@@ -13,8 +13,6 @@ import * as  AOS from 'aos';
     MatIconModule,  
     TranslateModule,
     ReactiveFormsModule,
-    MatSelect,
-    MatIcon,
     NgClass,
   ],
   templateUrl: './filter.component.html',

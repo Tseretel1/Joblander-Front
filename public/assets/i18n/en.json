@@ -117,6 +117,10 @@
     "YOUREGISTEREDSECCESSFULLY" :"Congrats! you successfully on our platform!",
     "SIGNUPHEADER" :"",
     "DONTHAVEACCOUNT" :"You don't have an account?",
-    "HAVEACCOUNT" :"Already have an account?"
+    "HAVEACCOUNT" :"Already have an account?",
+
+    
+    "BIO" :"Bio",
+    "ABOUTME" :"About me"
 }
 

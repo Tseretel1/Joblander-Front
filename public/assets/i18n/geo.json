@@ -114,5 +114,9 @@
 
     "SIGNUPHEADER" :"",
     "DONTHAVEACCOUNT" :"არ გაქვს აქანუთი?",
-    "HAVEACCOUNT" :"უკვე გაქვს აქაუნთი?"
+    "HAVEACCOUNT" :"უკვე გაქვს აქაუნთი?",
+
+    
+    "BIO" :"Bio",
+    "ABOUTME" :"ჩემს შესახებ"
 }

@@ -20,11 +20,21 @@ export class HeaderComponent implements OnInit{
   userLogged:boolean = false;
 
   ngOnInit(): void {
-    this.loginSub = this.sharedService.login$.subscribe(({ data, loggedIn }) => {
-      this.userLogged = loggedIn;
+    this.loginSub = this.sharedService.login$.subscribe(({ loggedIn }) => {
+      this.isUserLogged();
     });
- }
+    this.isUserLogged();
+  }
 
+  isUserLogged(){
+    const token = localStorage.getItem('token');
+    if(token){
+      this.userLogged = true;
+    }
+    else{
+      this.userLogged = false;
+    }
+  }
   langDetect(){
 
     const lang = localStorage.getItem('lang');

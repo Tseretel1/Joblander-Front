@@ -27,10 +27,19 @@ export class MobileHeaderComponent  implements OnInit{
       once: false, 
     });
     this.loginSub = this.sharedService.login$.subscribe(({ data, loggedIn }) => {
-      this.userLogged = loggedIn;
+      this.isUserLogged();
     });
+    this.isUserLogged();
   }
-
+  isUserLogged(){
+    const token = localStorage.getItem('token');
+    if(token){
+      this.userLogged = true;
+    }
+    else{
+      this.userLogged = false;
+    }
+  }
   ngOnDestroy(): void {
     AOS.refreshHard();
   }

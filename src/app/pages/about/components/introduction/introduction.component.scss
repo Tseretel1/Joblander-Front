@@ -12,30 +12,35 @@ $primaryColor: rgb(50 170 160 / var(--tw-text-opacity, 1));
     flex-direction: column;
     align-items: center;
     width: 45%;
-      .find-job {
-        font-family: Bold;
-        font-size: 25px;
-    }
+    background-color: rgba(0, 0, 0, 0.459);
+    box-shadow: 0px 0px 5px inset;
+    border-radius: 10px;
+    padding: 10px;
     .sticky-side {
-      display: flex;
-      flex-direction: column;
-      position: sticky;
-      top: 50px;
-      width: 100%;
-      gap: 15px;
-      .background-container {
+        display: flex;
+        flex-direction: column;
+        position: sticky;
+        top: 80px;
         width: 100%;
-        overflow: hidden;
-        border-radius: 10px;
-        height: 300px;
-        .background-img {
+        gap: 15px;
+        color: white;
+        .find-job {
+            font-family: Bold;
+            font-size: 25px;
+        }
+        .background-container {
           width: 100%;
-          height: 100%;
-          object-fit: cover;
-          animation: 1s imgAnim;
+          overflow: hidden;
+          border-radius: 10px;
+          height: 300px;
+          .background-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
         }
       }
-    }
+
   }
   .about-align {
     display: flex;
@@ -47,6 +52,7 @@ $primaryColor: rgb(50 170 160 / var(--tw-text-opacity, 1));
       display: flex;
       gap: 30px;
       align-items: center;
+      justify-content: center;
       .content-container {
         display: flex;
         border-radius: 10px;
@@ -58,8 +64,7 @@ $primaryColor: rgb(50 170 160 / var(--tw-text-opacity, 1));
         overflow: hidden;
         padding: 10px;
         .content-title {
-          color: $primaryColor;
-          text-shadow: 0px 0px 3px $primaryColor;
+          color: white;
           font-family: Bold;
           margin: 0;
           font-size: 25px;
@@ -68,8 +73,6 @@ $primaryColor: rgb(50 170 160 / var(--tw-text-opacity, 1));
         .content-subject {
           text-align: center;
           color: white;
-          animation: 1.5s textAnim;
-          text-shadow: 0px 0px 2px whitesmoke;
         }
       }
       .about-img-container {
@@ -85,35 +88,10 @@ $primaryColor: rgb(50 170 160 / var(--tw-text-opacity, 1));
           width: 100%;
           height: 100%;
           object-fit: cover;
-          animation: 1s imgAnim;
           border-radius: 10px;
         }
       }
     }
-  }
-}
-
-@keyframes imgAnim {
-  0% {
-    scale: 0.5;
-  }
-  50% {
-    scale: 1.1;
-  }
-  100% {
-    scale: 1;
-  }
-}
-
-@keyframes textAnim {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    text-shadow: 0px 0px 10px white;
-  }
-  100% {
-    opacity: 1;
   }
 }
 
@@ -123,9 +101,15 @@ $primaryColor: rgb(50 170 160 / var(--tw-text-opacity, 1));
     padding-bottom: 20px;
     flex-direction: column;
     align-items: center;
-    gap: 0px;
+    .about-align{
+      width: 100%;
+      .about-content{
+        width: 80%;
+        justify-content: space-between;
+      }
+    }
     .about-background-align {
-      width: 95%;
+      width: 80%;
       .sticky-side {
         .background-container {
           width: 100%;
@@ -135,11 +119,15 @@ $primaryColor: rgb(50 170 160 / var(--tw-text-opacity, 1));
     }
   }
 }
-
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1200px) {
   .center-component {
-    .about-align {
-      width: 90%;
+    .about-align{
+      .about-content{
+        width: 100%;
+      }
+    }
+    .about-background-align {
+      width: 100%;
     }
   }
 }
@@ -150,7 +138,6 @@ $primaryColor: rgb(50 170 160 / var(--tw-text-opacity, 1));
     padding-bottom: 20px;
     flex-direction: column;
     align-items: center;
-    width: 100%;
     gap: 30px;
     .about-background-align {
       .sticky-side {
